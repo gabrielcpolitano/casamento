@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rumo aos R$10.000 - Casamento 2025</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" href="favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <style>
@@ -27,9 +25,42 @@
         .hover-scale:hover {
             transform: scale(1.02);
         }
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .sync-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .sync-success {
+            background-color: #10b981;
+            color: white;
+        }
+        .sync-error {
+            background-color: #ef4444;
+            color: white;
+        }
+        .sync-loading {
+            background-color: #3b82f6;
+            color: white;
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
+    <!-- Indicador de Sincronização -->
+    <div id="sync-indicator" class="sync-indicator" style="display: none;">
+        <i class="ri-cloud-line mr-1"></i>
+        <span id="sync-text">Sincronizando...</span>
+    </div>
+
     <!-- Header -->
     <header class="bg-white shadow-sm border-b border-gray-200">
         <div class="max-w-4xl mx-auto px-4 py-6">
@@ -40,6 +71,10 @@
                 </h1>
                 <p class="text-gray-600">Meta para o nosso casamento em fevereiro de 2025</p>
                 <div id="countdown" class="mt-2 text-sm text-gray-500"></div>
+                <div class="mt-2 text-xs text-gray-400">
+                    <i class="ri-cloud-fill mr-1"></i>
+                    Dados sincronizados na nuvem
+                </div>
             </div>
         </div>
     </header>
@@ -143,17 +178,23 @@
                     <i class="ri-list-check text-blue-500 mr-2"></i>
                     Histórico de Ganhos
                 </h2>
-                <button id="btn-zerar" 
-                        class="text-red-600 hover:text-red-800 text-sm font-medium transition-colors duration-200">
-                    <i class="ri-delete-bin-line mr-1"></i>
-                    Zerar Dados
-                </button>
+                <div class="flex space-x-2">
+                    <button id="btn-sincronizar" 
+                            class="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200">
+                        <i class="ri-refresh-line mr-1"></i>
+                        Sincronizar
+                    </button>
+                    <button id="btn-zerar" 
+                            class="text-red-600 hover:text-red-800 text-sm font-medium transition-colors duration-200">
+                        <i class="ri-delete-bin-line mr-1"></i>
+                        Zerar Dados
+                    </button>
+                </div>
             </div>
             <div id="lista-ganhos" class="space-y-3">
                 <div class="text-center text-gray-500 py-8">
-                    <i class="ri-inbox-line text-4xl mb-4"></i>
-                    <p>Nenhum ganho registrado ainda.</p>
-                    <p class="text-sm">Adicione seu primeiro ganho acima!</p>
+                    <i class="ri-loader-4-line text-4xl mb-4 animate-spin"></i>
+                    <p>Carregando dados...</p>
                 </div>
             </div>
         </div>
@@ -182,7 +223,412 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="js/app.js"></script>
+    <script>
+        // Configurações
+        const META_TOTAL = 10000;
+        const DATA_CASAMENTO = new Date('2026-02-28');
+        
+        // Configuração JSONBin
+        const JSONBIN_CONFIG = {
+            apiKey: '$2a$10$VoBt43USdhGYfEGiusRTkeoegwckwoYFj77Er4MKw1yk772gXcNZq',
+            binId: null, // Será definido após criar o bin
+            baseUrl: 'https://api.jsonbin.io/v3'
+        };
+
+        // Estado da aplicação
+        let ganhos = [];
+        let isLoading = false;
+
+        // Elementos DOM
+        const totalEconomizadoEl = document.getElementById('total-economizado');
+        const faltaEl = document.getElementById('falta');
+        const porcentagemEl = document.getElementById('porcentagem');
+        const barraProgressoEl = document.getElementById('barra-progresso');
+        const mensagemMotivacionalEl = document.getElementById('mensagem-motivacional');
+        const diasRestantesEl = document.getElementById('dias-restantes');
+        const valorSemanalEl = document.getElementById('valor-semanal');
+        const listaGanhosEl = document.getElementById('lista-ganhos');
+        const formGanho = document.getElementById('form-ganho');
+        const countdownEl = document.getElementById('countdown');
+        const syncIndicatorEl = document.getElementById('sync-indicator');
+        const syncTextEl = document.getElementById('sync-text');
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            // Definir data atual como padrão
+            document.getElementById('data-ganho').valueAsDate = new Date();
+            
+            // Inicializar JSONBin e carregar dados
+            inicializarJSONBin();
+            
+            // Atualizar contador
+            atualizarContador();
+            
+            // Atualizar contador a cada minuto
+            setInterval(atualizarContador, 60000);
+        });
+
+        // Event Listeners
+        formGanho.addEventListener('submit', function(e) {
+            e.preventDefault();
+            adicionarGanho();
+        });
+
+        document.getElementById('btn-sincronizar').addEventListener('click', function() {
+            carregarDados();
+        });
+
+        document.getElementById('btn-zerar').addEventListener('click', function() {
+            document.getElementById('modal-confirmacao').classList.remove('hidden');
+            document.getElementById('modal-confirmacao').classList.add('flex');
+        });
+
+        document.getElementById('confirmar-zerar').addEventListener('click', function() {
+            zerarDados();
+            document.getElementById('modal-confirmacao').classList.add('hidden');
+            document.getElementById('modal-confirmacao').classList.remove('flex');
+        });
+
+        document.getElementById('cancelar-zerar').addEventListener('click', function() {
+            document.getElementById('modal-confirmacao').classList.add('hidden');
+            document.getElementById('modal-confirmacao').classList.remove('flex');
+        });
+
+        // Funções JSONBin
+        async function inicializarJSONBin() {
+            try {
+                // Tentar recuperar binId do localStorage
+                const savedBinId = localStorage.getItem('jsonbin_bin_id');
+                
+                if (savedBinId) {
+                    JSONBIN_CONFIG.binId = savedBinId;
+                    await carregarDados();
+                } else {
+                    // Criar novo bin
+                    await criarNovoBin();
+                }
+            } catch (error) {
+                console.error('Erro ao inicializar JSONBin:', error);
+                mostrarSyncStatus('error', 'Erro de conexão');
+                // Fallback para localStorage
+                carregarDadosLocal();
+            }
+        }
+
+        async function criarNovoBin() {
+            mostrarSyncStatus('loading', 'Criando banco de dados...');
+            
+            try {
+                const response = await fetch(`${JSONBIN_CONFIG.baseUrl}/b`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': JSONBIN_CONFIG.apiKey
+                    },
+                    body: JSON.stringify({
+                        ganhos: [],
+                        created_at: new Date().toISOString(),
+                        app_name: 'Rumo aos R$10.000'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                JSONBIN_CONFIG.binId = data.metadata.id;
+                
+                // Salvar binId no localStorage
+                localStorage.setItem('jsonbin_bin_id', JSONBIN_CONFIG.binId);
+                
+                ganhos = [];
+                atualizarInterface();
+                mostrarSyncStatus('success', 'Banco criado com sucesso!');
+                
+            } catch (error) {
+                console.error('Erro ao criar bin:', error);
+                mostrarSyncStatus('error', 'Erro ao criar banco');
+                carregarDadosLocal();
+            }
+        }
+
+        async function carregarDados() {
+            if (!JSONBIN_CONFIG.binId) {
+                await criarNovoBin();
+                return;
+            }
+
+            mostrarSyncStatus('loading', 'Sincronizando...');
+            isLoading = true;
+            
+            try {
+                const response = await fetch(`${JSONBIN_CONFIG.baseUrl}/b/${JSONBIN_CONFIG.binId}/latest`, {
+                    method: 'GET',
+                    headers: {
+                        'X-Master-Key': JSONBIN_CONFIG.apiKey
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                ganhos = data.record.ganhos || [];
+                
+                // Backup local
+                localStorage.setItem('ganhos_backup', JSON.stringify(ganhos));
+                
+                atualizarInterface();
+                mostrarSyncStatus('success', 'Dados sincronizados!');
+                
+            } catch (error) {
+                console.error('Erro ao carregar dados:', error);
+                mostrarSyncStatus('error', 'Erro na sincronização');
+                carregarDadosLocal();
+            } finally {
+                isLoading = false;
+            }
+        }
+
+        async function salvarDados() {
+            if (!JSONBIN_CONFIG.binId || isLoading) {
+                // Backup local enquanto não consegue sincronizar
+                localStorage.setItem('ganhos_backup', JSON.stringify(ganhos));
+                return;
+            }
+
+            mostrarSyncStatus('loading', 'Salvando...');
+            
+            try {
+                const response = await fetch(`${JSONBIN_CONFIG.baseUrl}/b/${JSONBIN_CONFIG.binId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': JSONBIN_CONFIG.apiKey
+                    },
+                    body: JSON.stringify({
+                        ganhos: ganhos,
+                        updated_at: new Date().toISOString(),
+                        app_name: 'Rumo aos R$10.000'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                // Backup local
+                localStorage.setItem('ganhos_backup', JSON.stringify(ganhos));
+                mostrarSyncStatus('success', 'Dados salvos!');
+                
+            } catch (error) {
+                console.error('Erro ao salvar dados:', error);
+                mostrarSyncStatus('error', 'Erro ao salvar');
+                // Backup local em caso de erro
+                localStorage.setItem('ganhos_backup', JSON.stringify(ganhos));
+            }
+        }
+
+        function carregarDadosLocal() {
+            const backup = localStorage.getItem('ganhos_backup');
+            if (backup) {
+                ganhos = JSON.parse(backup);
+                atualizarInterface();
+                mostrarSyncStatus('error', 'Usando dados locais');
+            } else {
+                ganhos = [];
+                atualizarInterface();
+            }
+        }
+
+        function mostrarSyncStatus(type, message) {
+            syncIndicatorEl.className = `sync-indicator sync-${type}`;
+            syncTextEl.textContent = message;
+            syncIndicatorEl.style.display = 'block';
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    syncIndicatorEl.style.display = 'none';
+                }, 2000);
+            } else if (type === 'error') {
+                setTimeout(() => {
+                    syncIndicatorEl.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        // Funções principais
+        async function adicionarGanho() {
+            const valor = parseFloat(document.getElementById('valor-ganho').value);
+            const descricao = document.getElementById('descricao-ganho').value;
+            const data = document.getElementById('data-ganho').value;
+
+            const novoGanho = {
+                id: Date.now(),
+                valor: valor,
+                descricao: descricao,
+                data: data
+            };
+
+            ganhos.push(novoGanho);
+            atualizarInterface();
+            await salvarDados();
+            
+            formGanho.reset();
+            document.getElementById('data-ganho').valueAsDate = new Date();
+
+            // Animação de sucesso
+            mostrarNotificacao('Ganho adicionado com sucesso!', 'success');
+        }
+
+        async function removerGanho(id) {
+            ganhos = ganhos.filter(ganho => ganho.id !== id);
+            atualizarInterface();
+            await salvarDados();
+            mostrarNotificacao('Ganho removido!', 'info');
+        }
+
+        async function zerarDados() {
+            ganhos = [];
+            atualizarInterface();
+            await salvarDados();
+            mostrarNotificacao('Dados zerados!', 'info');
+        }
+
+        function atualizarInterface() {
+            const totalEconomizado = ganhos.reduce((total, ganho) => total + ganho.valor, 0);
+            const falta = META_TOTAL - totalEconomizado;
+            const porcentagem = Math.min((totalEconomizado / META_TOTAL) * 100, 100);
+
+            // Atualizar valores
+            totalEconomizadoEl.textContent = formatarMoeda(totalEconomizado);
+            faltaEl.textContent = formatarMoeda(Math.max(falta, 0));
+            porcentagemEl.textContent = porcentagem.toFixed(1) + '%';
+            barraProgressoEl.style.width = porcentagem + '%';
+
+            // Atualizar previsão
+            atualizarPrevisao(falta);
+
+            // Atualizar mensagem motivacional
+            atualizarMensagemMotivacional(porcentagem);
+
+            // Atualizar lista de ganhos
+            atualizarListaGanhos();
+        }
+
+        function atualizarPrevisao(falta) {
+            const hoje = new Date();
+            const diasRestantes = Math.ceil((DATA_CASAMENTO - hoje) / (1000 * 60 * 60 * 24));
+            const mesesRestantes = diasRestantes / 30.44; // Média de dias em um mês
+            const valorMensal = mesesRestantes > 0 ? falta / mesesRestantes : 0;
+
+            diasRestantesEl.textContent = diasRestantes > 0 ? diasRestantes : '0';
+            valorSemanalEl.textContent = formatarMoeda(Math.max(valorMensal, 0));
+        }
+
+        function atualizarMensagemMotivacional(porcentagem) {
+            let mensagem = '';
+            
+            if (porcentagem === 0) {
+                mensagem = 'Vamos começar essa jornada! 💪';
+            } else if (porcentagem < 25) {
+                mensagem = 'Ótimo começo! Continue assim! 🌟';
+            } else if (porcentagem < 50) {
+                mensagem = 'Você está no caminho certo! 🚀';
+            } else if (porcentagem < 75) {
+                mensagem = 'Mais da metade! Você consegue! 💎';
+            } else if (porcentagem < 100) {
+                mensagem = 'Quase lá! O casamento está chegando! 💕';
+            } else {
+                mensagem = 'Meta alcançada! Parabéns! 🎉💒';
+            }
+
+            mensagemMotivacionalEl.textContent = mensagem;
+        }
+
+        function atualizarListaGanhos() {
+            if (ganhos.length === 0) {
+                listaGanhosEl.innerHTML = `
+                    <div class="text-center text-gray-500 py-8">
+                        <i class="ri-inbox-line text-4xl mb-4"></i>
+                        <p>Nenhum ganho registrado ainda.</p>
+                        <p class="text-sm">Adicione seu primeiro ganho acima!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Ordenar ganhos por data (mais recente primeiro)
+            const ganhosOrdenados = [...ganhos].sort((a, b) => new Date(b.data) - new Date(a.data));
+
+            listaGanhosEl.innerHTML = ganhosOrdenados.map(ganho => `
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors fade-in">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-3">
+                            <div class="text-lg font-semibold text-green-600">${formatarMoeda(ganho.valor)}</div>
+                            <div class="text-gray-900">${ganho.descricao}</div>
+                        </div>
+                        <div class="text-sm text-gray-500 mt-1">${formatarData(ganho.data)}</div>
+                    </div>
+                    <button onclick="removerGanho(${ganho.id})" 
+                            class="text-red-500 hover:text-red-700 transition-colors p-2">
+                            <i class="ri-delete-bin-line"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function atualizarContador() {
+            const hoje = new Date();
+            const diferenca = DATA_CASAMENTO - hoje;
+            
+            if (diferenca > 0) {
+                const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+                
+                countdownEl.textContent = `⏰ Faltam ${dias} dias, ${horas}h e ${minutos}min para o grande dia!`;
+            } else {
+                countdownEl.textContent = '🎉 O grande dia chegou! Parabéns!';
+            }
+        }
+
+        function formatarMoeda(valor) {
+            return new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            }).format(valor);
+        }
+
+        function formatarData(data) {
+            return new Date(data + 'T00:00:00').toLocaleDateString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+        }
+
+        function mostrarNotificacao(mensagem, tipo) {
+            // Criar elemento de notificação
+            const notificacao = document.createElement('div');
+            notificacao.className = `fixed top-4 right-4 px-6 py-3 rounded-lg text-white z-50 fade-in ${
+                tipo === 'success' ? 'bg-green-500' : 'bg-blue-500'
+            }`;
+            notificacao.textContent = mensagem;
+            
+            document.body.appendChild(notificacao);
+            
+            // Remover após 3 segundos
+            setTimeout(() => {
+                notificacao.remove();
+            }, 3000);
+        }
+
+        // Tornar funções globais para uso nos event handlers inline
+        window.removerGanho = removerGanho;
+    </script>
 </body>
 </html>
+

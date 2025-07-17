@@ -24,9 +24,9 @@ class DatabaseManager {
 
             // Buscar dados do servidor
             const response = await fetch(`${CONFIG.JSONBIN.BASE_URL}/${CONFIG.JSONBIN.BIN_ID}/latest`, {
+                method: 'GET',
                 headers: {
-                    'X-Master-Key': CONFIG.JSONBIN.API_KEY,
-                    'Content-Type': 'application/json'
+                    'X-Master-Key': CONFIG.JSONBIN.API_KEY
                 }
             });
 
@@ -34,10 +34,12 @@ class DatabaseManager {
                 const data = await response.json();
                 const dadosServidor = data.record;
                 
-                if (dadosServidor.ganhos) {
+                if (dadosServidor && dadosServidor.ganhos) {
                     this.ganhos = dadosServidor.ganhos;
                     this.salvarCache();
                 }
+            } else {
+                console.warn('Resposta não OK do servidor:', response.status);
             }
         } catch (error) {
             console.warn('Erro ao carregar dados do servidor:', error);
@@ -47,26 +49,32 @@ class DatabaseManager {
 
     async salvarDados() {
         try {
+            const dadosParaSalvar = {
+                ganhos: this.ganhos,
+                ultimaAtualizacao: new Date().toISOString()
+            };
+
             const response = await fetch(`${CONFIG.JSONBIN.BASE_URL}/${CONFIG.JSONBIN.BIN_ID}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-Master-Key': CONFIG.JSONBIN.API_KEY
                 },
-                body: JSON.stringify({
-                    ganhos: this.ganhos,
-                    ultimaAtualizacao: new Date().toISOString()
-                })
+                body: JSON.stringify(dadosParaSalvar)
             });
 
             if (!response.ok) {
-                throw new Error(`Erro ${response.status}`);
+                const errorText = await response.text();
+                console.error('Erro na resposta:', response.status, errorText);
+                throw new Error(`Erro ${response.status}: ${errorText}`);
             }
 
             this.salvarCache();
             return true;
         } catch (error) {
             console.error('Erro ao salvar dados:', error);
+            // Salvar localmente mesmo se o servidor falhar
+            this.salvarCache();
             throw error;
         }
     }
@@ -78,29 +86,64 @@ class DatabaseManager {
         };
 
         this.ganhos.push(novoGanho);
-        await this.salvarDados();
-        return novoGanho;
+        
+        try {
+            await this.salvarDados();
+            return novoGanho;
+        } catch (error) {
+            // Se falhar no servidor, manter localmente
+            this.salvarCache();
+            throw error;
+        }
     }
 
     async removerGanho(id) {
         this.ganhos = this.ganhos.filter(ganho => ganho.id !== id);
-        await this.salvarDados();
+        
+        try {
+            await this.salvarDados();
+        } catch (error) {
+            // Se falhar no servidor, manter localmente
+            this.salvarCache();
+            throw error;
+        }
     }
 
     async zerarDados() {
         this.ganhos = [];
-        await this.salvarDados();
+        
+        try {
+            await this.salvarDados();
+        } catch (error) {
+            // Se falhar no servidor, manter localmente
+            this.salvarCache();
+            throw error;
+        }
     }
 
     carregarCache() {
-        const cache = localStorage.getItem('casamento_ganhos');
-        if (cache) {
-            this.ganhos = JSON.parse(cache);
+        try {
+            const cache = localStorage.getItem('casamento_ganhos');
+            if (cache) {
+                const dados = JSON.parse(cache);
+                this.ganhos = dados.ganhos || dados || [];
+            }
+        } catch (error) {
+            console.warn('Erro ao carregar cache:', error);
+            this.ganhos = [];
         }
     }
 
     salvarCache() {
-        localStorage.setItem('casamento_ganhos', JSON.stringify(this.ganhos));
+        try {
+            const dados = {
+                ganhos: this.ganhos,
+                ultimaAtualizacao: new Date().toISOString()
+            };
+            localStorage.setItem('casamento_ganhos', JSON.stringify(dados));
+        } catch (error) {
+            console.warn('Erro ao salvar cache:', error);
+        }
     }
 
     getTotalEconomizado() {
@@ -118,7 +161,8 @@ class NotificationManager {
         const cores = {
             success: 'bg-green-500',
             error: 'bg-red-500',
-            info: 'bg-blue-500'
+            info: 'bg-blue-500',
+            warning: 'bg-yellow-500'
         };
 
         const notificacao = document.createElement('div');
@@ -127,7 +171,7 @@ class NotificationManager {
         
         document.body.appendChild(notificacao);
         
-        setTimeout(() => notificacao.remove(), 3000);
+        setTimeout(() => notificacao.remove(), 4000);
     }
 }
 
@@ -208,6 +252,16 @@ class CasamentoApp {
         const descricao = document.getElementById('descricao-ganho').value;
         const data = document.getElementById('data-ganho').value;
 
+        if (!valor || valor <= 0) {
+            NotificationManager.show('Por favor, insira um valor válido.', 'warning');
+            return;
+        }
+
+        if (!descricao.trim()) {
+            NotificationManager.show('Por favor, insira uma descrição.', 'warning');
+            return;
+        }
+
         try {
             NotificationManager.show('Salvando...', 'info');
             
@@ -219,7 +273,8 @@ class CasamentoApp {
             
             NotificationManager.show('Ganho salvo com sucesso!', 'success');
         } catch (error) {
-            NotificationManager.show('Erro ao salvar. Verifique sua conexão.', 'error');
+            NotificationManager.show('Salvo localmente - problema na conexão', 'warning');
+            this.atualizarInterface();
         }
     }
 
@@ -229,7 +284,8 @@ class CasamentoApp {
             this.atualizarInterface();
             NotificationManager.show('Ganho removido!', 'info');
         } catch (error) {
-            NotificationManager.show('Erro ao remover. Verifique sua conexão.', 'error');
+            NotificationManager.show('Removido localmente - problema na conexão', 'warning');
+            this.atualizarInterface();
         }
     }
 
@@ -249,7 +305,8 @@ class CasamentoApp {
             this.atualizarInterface();
             NotificationManager.show('Dados zerados!', 'info');
         } catch (error) {
-            NotificationManager.show('Erro ao zerar dados. Verifique sua conexão.', 'error');
+            NotificationManager.show('Dados zerados localmente - problema na conexão', 'warning');
+            this.atualizarInterface();
         }
         this.fecharModal();
     }

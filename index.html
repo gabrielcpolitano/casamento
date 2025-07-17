@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumo aos R$10.000 - Casamento 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @import url(\'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap\');
+        body { font-family: \'Inter\', sans-serif; }
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hover-scale {
+            transition: transform 0.2s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <div class="text-center">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">
+                    <i class="ri-heart-fill text-pink-500 mr-2"></i>
+                    Rumo aos R$10.000
+                </h1>
+                <p class="text-gray-600">Meta para o nosso casamento em fevereiro de 2025</p>
+                <div id="countdown" class="mt-2 text-sm text-gray-500"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Dashboard Principal -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Meta Total -->
+            <div class="bg-white rounded-lg shadow-sm p-6 text-center hover-scale">
+                <div class="text-3xl font-bold text-gray-900 mb-2" id="meta-total">R$ 10.000</div>
+                <div class="text-gray-600">Meta Total</div>
+                <i class="ri-bullseye-fill text-blue-500 text-2xl mt-2"></i>
+            </div>
+
+            <!-- Total Economizado -->
+            <div class="bg-white rounded-lg shadow-sm p-6 text-center hover-scale">
+                <div class="text-3xl font-bold text-green-600 mb-2" id="total-economizado">R$ 0</div>
+                <div class="text-gray-600">Economizado</div>
+                <i class="ri-bank-fill text-green-500 text-2xl mt-2"></i>
+            </div>
+
+            <!-- Falta -->
+            <div class="bg-white rounded-lg shadow-sm p-6 text-center hover-scale">
+                <div class="text-3xl font-bold text-orange-600 mb-2" id="falta">R$ 10.000</div>
+                <div class="text-gray-600">Ainda Falta</div>
+                <i class="ri-line-chart-fill text-orange-500 text-2xl mt-2"></i>
+            </div>
+        </div>
+
+        <!-- Barra de Progresso -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-900">Progresso da Meta</h2>
+                <span class="text-lg font-bold text-green-600" id="porcentagem">0%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                <div class="bg-gradient-to-r from-green-400 to-green-600 h-4 rounded-full progress-bar" id="barra-progresso" style="width: 0%"></div>
+            </div>
+            <div class="text-center">
+                <div id="mensagem-motivacional" class="text-gray-600 italic"></div>
+            </div>
+        </div>
+
+        <!-- Previsão de Progresso -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">
+                <i class="ri-calendar-event-fill text-blue-500 mr-2"></i>
+                Previsão de Progresso
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                    <div class="text-2xl font-bold text-blue-600" id="dias-restantes">-</div>
+                    <div class="text-gray-600">Dias para o casamento</div>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                    <div class="text-2xl font-bold text-purple-600" id="valor-semanal">R$ 0</div>
+                    <div class="text-gray-600">Necessário por mês</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulário de Ganhos -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">
+                <i class="ri-add-circle-fill text-green-500 mr-2"></i>
+                Registrar Novo Ganho
+            </h2>
+            <form id="form-ganho" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Valor (R$)</label>
+                        <input type="number" id="valor-ganho" step="0.01" min="0" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                               placeholder="0,00" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Descrição</label>
+                        <input type="text" id="descricao-ganho" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                               placeholder="Ex: Freelance, venda, etc." required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Data</label>
+                        <input type="date" id="data-ganho" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                               required>
+                    </div>
+                </div>
+                <button type="submit" 
+                        class="w-full md:w-auto bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors duration-200 font-medium">
+                    <i class="ri-add-line mr-2"></i>
+                    Adicionar Ganho
+                </button>
+            </form>
+        </div>
+
+        <!-- Lista de Ganhos -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-900">
+                    <i class="ri-list-check text-blue-500 mr-2"></i>
+                    Histórico de Ganhos
+                </h2>
+                <button id="btn-zerar" 
+                        class="text-red-600 hover:text-red-800 text-sm font-medium transition-colors duration-200">
+                    <i class="ri-delete-bin-line mr-1"></i>
+                    Zerar Dados
+                </button>
+            </div>
+            <div id="lista-ganhos" class="space-y-3">
+                <div class="text-center text-gray-500 py-8">
+                    <i class="fas fa-inbox text-4xl mb-4"></i>
+                    <p>Nenhum ganho registrado ainda.</p>
+                    <p class="text-sm">Adicione seu primeiro ganho acima!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-6 mt-12">
+        <div class="max-w-4xl mx-auto px-4 text-center text-gray-600">
+            <p>💕 Feito com amor para nosso futuro juntos 💕</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Confirmação -->
+    <div id="modal-confirmacao" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 max-w-sm mx-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Confirmar Ação</h3>
+            <p class="text-gray-600 mb-6">Tem certeza que deseja zerar todos os dados? Esta ação não pode ser desfeita.</p>
+            <div class="flex space-x-3">
+                <button id="confirmar-zerar" class="flex-1 bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors">
+                    Sim, Zerar
+                </button>
+                <button id="cancelar-zerar" class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 transition-colors">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configurações
+        const META_TOTAL = 10000;
+        const DATA_CASAMENTO = new Date('2026-02-28');
+
+        // Estado da aplicação
+        let ganhos = JSON.parse(localStorage.getItem('ganhos')) || [];
+
+        // Elementos DOM
+        const totalEconomizadoEl = document.getElementById('total-economizado');
+        const faltaEl = document.getElementById('falta');
+        const porcentagemEl = document.getElementById('porcentagem');
+        const barraProgressoEl = document.getElementById('barra-progresso');
+        const mensagemMotivacionalEl = document.getElementById('mensagem-motivacional');
+        const diasRestantesEl = document.getElementById('dias-restantes');
+        const valorSemanalEl = document.getElementById('valor-semanal');
+        const listaGanhosEl = document.getElementById('lista-ganhos');
+        const formGanho = document.getElementById('form-ganho');
+        const countdownEl = document.getElementById('countdown');
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            // Definir data atual como padrão
+            document.getElementById('data-ganho').valueAsDate = new Date();
+            
+            // Atualizar interface
+            atualizarInterface();
+            atualizarContador();
+            
+            // Atualizar contador a cada minuto
+            setInterval(atualizarContador, 60000);
+        });
+
+        // Event Listeners
+        formGanho.addEventListener('submit', function(e) {
+            e.preventDefault();
+            adicionarGanho();
+        });
+
+        document.getElementById('btn-zerar').addEventListener('click', function() {
+            document.getElementById('modal-confirmacao').classList.remove('hidden');
+            document.getElementById('modal-confirmacao').classList.add('flex');
+        });
+
+        document.getElementById('confirmar-zerar').addEventListener('click', function() {
+            zerarDados();
+            document.getElementById('modal-confirmacao').classList.add('hidden');
+            document.getElementById('modal-confirmacao').classList.remove('flex');
+        });
+
+        document.getElementById('cancelar-zerar').addEventListener('click', function() {
+            document.getElementById('modal-confirmacao').classList.add('hidden');
+            document.getElementById('modal-confirmacao').classList.remove('flex');
+        });
+
+        // Funções principais
+        function adicionarGanho() {
+            const valor = parseFloat(document.getElementById('valor-ganho').value);
+            const descricao = document.getElementById('descricao-ganho').value;
+            const data = document.getElementById('data-ganho').value;
+
+            const novoGanho = {
+                id: Date.now(),
+                valor: valor,
+                descricao: descricao,
+                data: data
+            };
+
+            ganhos.push(novoGanho);
+            salvarDados();
+            atualizarInterface();
+            formGanho.reset();
+            document.getElementById('data-ganho').valueAsDate = new Date();
+
+            // Animação de sucesso
+            mostrarNotificacao('Ganho adicionado com sucesso!', 'success');
+        }
+
+        function removerGanho(id) {
+            ganhos = ganhos.filter(ganho => ganho.id !== id);
+            salvarDados();
+            atualizarInterface();
+            mostrarNotificacao('Ganho removido!', 'info');
+        }
+
+        function zerarDados() {
+            ganhos = [];
+            salvarDados();
+            atualizarInterface();
+            mostrarNotificacao('Dados zerados!', 'info');
+        }
+
+        function salvarDados() {
+            localStorage.setItem('ganhos', JSON.stringify(ganhos));
+        }
+
+        function atualizarInterface() {
+            const totalEconomizado = ganhos.reduce((total, ganho) => total + ganho.valor, 0);
+            const falta = META_TOTAL - totalEconomizado;
+            const porcentagem = Math.min((totalEconomizado / META_TOTAL) * 100, 100);
+
+            // Atualizar valores
+            totalEconomizadoEl.textContent = formatarMoeda(totalEconomizado);
+            faltaEl.textContent = formatarMoeda(Math.max(falta, 0));
+            porcentagemEl.textContent = porcentagem.toFixed(1) + '%';
+            barraProgressoEl.style.width = porcentagem + '%';
+
+            // Atualizar previsão
+            atualizarPrevisao(falta);
+
+            // Atualizar mensagem motivacional
+            atualizarMensagemMotivacional(porcentagem);
+
+            // Atualizar lista de ganhos
+            atualizarListaGanhos();
+        }
+
+        function atualizarPrevisao(falta) {
+            const hoje = new Date();
+            const diasRestantes = Math.ceil((DATA_CASAMENTO - hoje) / (1000 * 60 * 60 * 24));
+            const mesesRestantes = diasRestantes / 30.44; // Média de dias em um mês
+            const valorMensal = mesesRestantes > 0 ? falta / mesesRestantes : 0;
+
+            diasRestantesEl.textContent = diasRestantes > 0 ? diasRestantes : '0';
+            valorSemanalEl.textContent = formatarMoeda(Math.max(valorMensal, 0));
+        }
+
+        function atualizarMensagemMotivacional(porcentagem) {
+            let mensagem = '';
+            
+            if (porcentagem === 0) {
+                mensagem = 'Vamos começar essa jornada! 💪';
+            } else if (porcentagem < 25) {
+                mensagem = 'Ótimo começo! Continue assim! 🌟';
+            } else if (porcentagem < 50) {
+                mensagem = 'Você está no caminho certo! 🚀';
+            } else if (porcentagem < 75) {
+                mensagem = 'Mais da metade! Você consegue! 💎';
+            } else if (porcentagem < 100) {
+                mensagem = 'Quase lá! O casamento está chegando! 💕';
+            } else {
+                mensagem = 'Meta alcançada! Parabéns! 🎉💒';
+            }
+
+            mensagemMotivacionalEl.textContent = mensagem;
+        }
+
+        function atualizarListaGanhos() {
+            if (ganhos.length === 0) {
+                listaGanhosEl.innerHTML = `
+                    <div class="text-center text-gray-500 py-8">
+                        <i class="ri-inbox-line text-4xl mb-4"></i>
+                        <p>Nenhum ganho registrado ainda.</p>
+                        <p class="text-sm">Adicione seu primeiro ganho acima!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Ordenar ganhos por data (mais recente primeiro)
+            const ganhosOrdenados = [...ganhos].sort((a, b) => new Date(b.data) - new Date(a.data));
+
+            listaGanhosEl.innerHTML = ganhosOrdenados.map(ganho => `
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors fade-in">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-3">
+                            <div class="text-lg font-semibold text-green-600">${formatarMoeda(ganho.valor)}</div>
+                            <div class="text-gray-900">${ganho.descricao}</div>
+                        </div>
+                        <div class="text-sm text-gray-500 mt-1">${formatarData(ganho.data)}</div>
+                    </div>
+                    <button onclick="removerGanho(${ganho.id})" 
+                            class="text-red-500 hover:text-red-700 transition-colors p-2">
+                            <i class="ri-delete-bin-line"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function atualizarContador() {
+            const hoje = new Date();
+            const diferenca = DATA_CASAMENTO - hoje;
+            
+            if (diferenca > 0) {
+                const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+                
+                countdownEl.textContent = `⏰ Faltam ${dias} dias, ${horas}h e ${minutos}min para o grande dia!`;
+            } else {
+                countdownEl.textContent = '🎉 O grande dia chegou! Parabéns!';
+            }
+        }
+
+        function formatarMoeda(valor) {
+            return new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            }).format(valor);
+        }
+
+        function formatarData(data) {
+            return new Date(data + 'T00:00:00').toLocaleDateString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+        }
+
+        function mostrarNotificacao(mensagem, tipo) {
+            // Criar elemento de notificação
+            const notificacao = document.createElement('div');
+            notificacao.className = `fixed top-4 right-4 px-6 py-3 rounded-lg text-white z-50 fade-in ${
+                tipo === 'success' ? 'bg-green-500' : 'bg-blue-500'
+            }`;
+            notificacao.textContent = mensagem;
+            
+            document.body.appendChild(notificacao);
+            
+            // Remover após 3 segundos
+            setTimeout(() => {
+                notificacao.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+

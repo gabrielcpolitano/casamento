@@ -188,7 +188,7 @@
         const DATA_CASAMENTO = new Date('2026-02-28');
         
         // JSONBin Configuration
-        const JSONBIN_BIN_ID = '676d2b95acd3cb34a8c50ba7'; // Substitua pelo seu Bin ID
+        const JSONBIN_BIN_ID = '676d2b95acd3cb34a8c50ba7';
         const JSONBIN_API_KEY = '$2a$10$yAGvKoC.5b9WTM4wgrH/x.JcuJD8DDaZny34D6/Dk98ienstiHT2q';
         const JSONBIN_BASE_URL = 'https://api.jsonbin.io/v3/b';
 
@@ -267,6 +267,8 @@
             mostrarNotificacao('Salvando...', 'info');
 
             try {
+                console.log('Tentando salvar ganho:', novoGanho);
+                
                 // Tentar salvar no JSONBin primeiro
                 const response = await fetch(`${JSONBIN_BASE_URL}/${JSONBIN_BIN_ID}`, {
                     method: 'PUT',
@@ -280,6 +282,8 @@
                     })
                 });
 
+                console.log('Status da resposta ao salvar:', response.status);
+
                 if (response.ok) {
                     // Só adiciona localmente se salvou com sucesso no servidor
                     ganhos.push(novoGanho);
@@ -289,12 +293,15 @@
                     formGanho.reset();
                     document.getElementById('data-ganho').valueAsDate = new Date();
                     mostrarNotificacao('Ganho salvo com sucesso!', 'success');
+                    console.log('Ganho salvo com sucesso!');
                 } else {
-                    throw new Error('Erro ao salvar no servidor');
+                    const errorText = await response.text();
+                    console.error('Erro do servidor:', response.status, errorText);
+                    throw new Error(`Erro ${response.status}: ${errorText}`);
                 }
             } catch (error) {
                 console.error('Erro ao salvar ganho:', error);
-                mostrarNotificacao('Erro ao salvar. Verifique sua conexão.', 'error');
+                mostrarNotificacao(`Erro ao salvar: ${error.message}`, 'error');
             }
         }
 
@@ -372,17 +379,24 @@
                 if (cacheLocal && timestampCache) {
                     ganhos = JSON.parse(cacheLocal);
                     ultimaAtualizacao = new Date(timestampCache);
+                    console.log('Dados carregados do cache local:', ganhos.length, 'ganhos');
                 }
 
                 // Verificar se há dados mais recentes no JSONBin
+                console.log('Tentando carregar dados do JSONBin...');
                 const response = await fetch(`${JSONBIN_BASE_URL}/${JSONBIN_BIN_ID}/latest`, {
                     headers: {
-                        'X-Master-Key': JSONBIN_API_KEY
+                        'X-Master-Key': JSONBIN_API_KEY,
+                        'Content-Type': 'application/json'
                     }
                 });
 
+                console.log('Status da resposta JSONBin:', response.status);
+
                 if (response.ok) {
                     const data = await response.json();
+                    console.log('Dados recebidos do JSONBin:', data);
+                    
                     const dadosServidor = data.record;
                     const timestampServidor = new Date(data.metadata.createdAt);
 
@@ -391,10 +405,16 @@
                         ganhos = dadosServidor.ganhos || [];
                         ultimaAtualizacao = timestampServidor;
                         salvarCache();
+                        console.log('Dados atualizados do servidor:', ganhos.length, 'ganhos');
                     }
+                } else {
+                    console.error('Erro na resposta do JSONBin:', response.status, response.statusText);
+                    const errorText = await response.text();
+                    console.error('Detalhes do erro:', errorText);
                 }
             } catch (error) {
                 console.warn('Erro ao carregar dados do JSONBin:', error);
+                mostrarNotificacao('Usando dados locais - sem conexão com servidor', 'info');
                 // Usar dados do cache local se houver erro
                 const cacheLocal = localStorage.getItem('ganhos');
                 if (cacheLocal) {

@@ -263,103 +263,28 @@
                 data: data
             };
 
-            // Mostrar loading
-            mostrarNotificacao('Salvando...', 'info');
+            ganhos.push(novoGanho);
+            await salvarDados();
+            atualizarInterface();
+            formGanho.reset();
+            document.getElementById('data-ganho').valueAsDate = new Date();
 
-            try {
-                // Tentar salvar no JSONBin primeiro
-                const response = await fetch(`${JSONBIN_BASE_URL}/${JSONBIN_BIN_ID}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Master-Key': JSONBIN_API_KEY
-                    },
-                    body: JSON.stringify({
-                        ganhos: [...ganhos, novoGanho],
-                        ultimaAtualizacao: new Date().toISOString()
-                    })
-                });
-
-                if (response.ok) {
-                    // Só adiciona localmente se salvou com sucesso no servidor
-                    ganhos.push(novoGanho);
-                    ultimaAtualizacao = new Date();
-                    salvarCache();
-                    atualizarInterface();
-                    formGanho.reset();
-                    document.getElementById('data-ganho').valueAsDate = new Date();
-                    mostrarNotificacao('Ganho salvo com sucesso!', 'success');
-                } else {
-                    throw new Error('Erro ao salvar no servidor');
-                }
-            } catch (error) {
-                console.error('Erro ao salvar ganho:', error);
-                mostrarNotificacao('Erro ao salvar. Verifique sua conexão.', 'error');
-            }
+            // Animação de sucesso
+            mostrarNotificacao('Ganho adicionado com sucesso!', 'success');
         }
 
         async function removerGanho(id) {
-            try {
-                const ganhosAtualizados = ganhos.filter(ganho => ganho.id !== id);
-                
-                // Tentar salvar no JSONBin primeiro
-                const response = await fetch(`${JSONBIN_BASE_URL}/${JSONBIN_BIN_ID}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Master-Key': JSONBIN_API_KEY
-                    },
-                    body: JSON.stringify({
-                        ganhos: ganhosAtualizados,
-                        ultimaAtualizacao: new Date().toISOString()
-                    })
-                });
-
-                if (response.ok) {
-                    // Só remove localmente se removeu com sucesso no servidor
-                    ganhos = ganhosAtualizados;
-                    ultimaAtualizacao = new Date();
-                    salvarCache();
-                    atualizarInterface();
-                    mostrarNotificacao('Ganho removido!', 'info');
-                } else {
-                    throw new Error('Erro ao remover no servidor');
-                }
-            } catch (error) {
-                console.error('Erro ao remover ganho:', error);
-                mostrarNotificacao('Erro ao remover. Verifique sua conexão.', 'error');
-            }
+            ganhos = ganhos.filter(ganho => ganho.id !== id);
+            await salvarDados();
+            atualizarInterface();
+            mostrarNotificacao('Ganho removido!', 'info');
         }
 
         async function zerarDados() {
-            try {
-                // Tentar limpar no JSONBin primeiro
-                const response = await fetch(`${JSONBIN_BASE_URL}/${JSONBIN_BIN_ID}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Master-Key': JSONBIN_API_KEY
-                    },
-                    body: JSON.stringify({
-                        ganhos: [],
-                        ultimaAtualizacao: new Date().toISOString()
-                    })
-                });
-
-                if (response.ok) {
-                    // Só limpa localmente se limpou com sucesso no servidor
-                    ganhos = [];
-                    ultimaAtualizacao = new Date();
-                    salvarCache();
-                    atualizarInterface();
-                    mostrarNotificacao('Dados zerados!', 'info');
-                } else {
-                    throw new Error('Erro ao zerar dados no servidor');
-                }
-            } catch (error) {
-                console.error('Erro ao zerar dados:', error);
-                mostrarNotificacao('Erro ao zerar dados. Verifique sua conexão.', 'error');
-            }
+            ganhos = [];
+            await salvarDados();
+            atualizarInterface();
+            mostrarNotificacao('Dados zerados!', 'info');
         }
 
         // Funções de persistência com JSONBin
@@ -559,20 +484,9 @@
         function mostrarNotificacao(mensagem, tipo) {
             // Criar elemento de notificação
             const notificacao = document.createElement('div');
-            let corFundo;
-            
-            switch(tipo) {
-                case 'success':
-                    corFundo = 'bg-green-500';
-                    break;
-                case 'error':
-                    corFundo = 'bg-red-500';
-                    break;
-                default:
-                    corFundo = 'bg-blue-500';
-            }
-            
-            notificacao.className = `fixed top-4 right-4 px-6 py-3 rounded-lg text-white z-50 fade-in ${corFundo}`;
+            notificacao.className = `fixed top-4 right-4 px-6 py-3 rounded-lg text-white z-50 fade-in ${
+                tipo === 'success' ? 'bg-green-500' : 'bg-blue-500'
+            }`;
             notificacao.textContent = mensagem;
             
             document.body.appendChild(notificacao);

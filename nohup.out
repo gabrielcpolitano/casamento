@@ -1,0 +1,904 @@
+
+Error: class uri 'eventlet' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/geventlet.py", line 9, in <module>
+    import eventlet
+ModuleNotFoundError: No module named 'eventlet'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/util.py", line 110, in load_class
+    mod = importlib.import_module('.'.join(components))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/geventlet.py", line 11, in <module>
+    raise RuntimeError("eventlet worker requires eventlet 0.24.1 or higher")
+RuntimeError: eventlet worker requires eventlet 0.24.1 or higher
+]
+
+
+Error: class uri 'eventlet' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/geventlet.py", line 9, in <module>
+    import eventlet
+ModuleNotFoundError: No module named 'eventlet'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/util.py", line 110, in load_class
+    mod = importlib.import_module('.'.join(components))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/geventlet.py", line 11, in <module>
+    raise RuntimeError("eventlet worker requires eventlet 0.24.1 or higher")
+RuntimeError: eventlet worker requires eventlet 0.24.1 or higher
+]
+
+
+Error: class uri 'eventlet' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/geventlet.py", line 9, in <module>
+    import eventlet
+ModuleNotFoundError: No module named 'eventlet'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/util.py", line 110, in load_class
+    mod = importlib.import_module('.'.join(components))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/geventlet.py", line 11, in <module>
+    raise RuntimeError("eventlet worker requires eventlet 0.24.1 or higher")
+RuntimeError: eventlet worker requires eventlet 0.24.1 or higher
+]
+
+
+Error: class uri 'eventlet' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/geventlet.py", line 9, in <module>
+    import eventlet
+ModuleNotFoundError: No module named 'eventlet'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/util.py", line 110, in load_class
+    mod = importlib.import_module('.'.join(components))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/geventlet.py", line 11, in <module>
+    raise RuntimeError("eventlet worker requires eventlet 0.24.1 or higher")
+RuntimeError: eventlet worker requires eventlet 0.24.1 or higher
+]
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 457-690-475
+Exception in thread Thread-1 (run_server):
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/flask_socketio/__init__.py", line 671, in run_server
+    eventlet_socket = eventlet.listen(addresses[0][4],
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/eventlet/convenience.py", line 78, in listen
+    sock.bind(addr)
+OSError: [Errno 98] Address already in use
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 488-175-084
+(13668) wsgi starting up on http://0.0.0.0:5000
+(13668) accepted ('10.135.79.1', 48264)
+54.197.38.224,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:04] "GET /socket.io/?EIO=4&transport=polling&t=PWV79WC HTTP/1.1" 200 276 0.000373
+(13668) accepted ('10.135.79.1', 48270)
+54.197.38.224,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:04] "POST /socket.io/?EIO=4&transport=polling&t=PWV79WN&sid=Mwo3HtOCGct1htL4AAAA HTTP/1.1" 200 234 0.001674
+(13668) accepted ('10.135.79.1', 48272)
+54.197.38.224,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:04] "GET /socket.io/?EIO=4&transport=polling&t=PWV79WO&sid=Mwo3HtOCGct1htL4AAAA HTTP/1.1" 200 189 0.000147
+(13668) accepted ('10.135.79.1', 48276)
+(13668) accepted ('10.135.79.1', 48290)
+(13668) accepted ('10.135.79.1', 48304)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:04] "GET /socket.io/?EIO=4&transport=polling&t=PWV79VJ HTTP/1.1" 200 341 0.001965
+54.197.38.224,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:04] "GET /socket.io/?EIO=4&transport=polling&t=PWV79WZ&sid=Mwo3HtOCGct1htL4AAAA HTTP/1.1" 200 157 0.023793
+(13668) accepted ('10.135.79.1', 48308)
+(13668) accepted ('10.135.79.1', 48312)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:04] "POST /socket.io/?EIO=4&transport=polling&t=PWV79XZ&sid=5mqPG4ASj5kTvwBLAAAC HTTP/1.1" 200 208 0.000883
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:04] "GET /socket.io/?EIO=4&transport=polling&t=PWV79Xb&sid=5mqPG4ASj5kTvwBLAAAC HTTP/1.1" 200 254 0.001578
+(13668) accepted ('10.135.79.1', 48326)
+(13668) accepted ('10.135.79.1', 48338)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:04] "GET /socket.io/?EIO=4&transport=polling&t=PWV79Zn&sid=5mqPG4ASj5kTvwBLAAAC HTTP/1.1" 200 222 0.264148
+(13668) accepted ('127.0.0.1', 49102)
+127.0.0.1 - - [18/Jul/2025 15:57:06] "GET /api/earnings HTTP/1.1" 200 567 0.086351
+(13668) accepted ('10.135.79.1', 48346)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:07] "GET /socket.io/?EIO=4&transport=polling&t=PWV7AE0 HTTP/1.1" 200 328 0.000338
+(13668) accepted ('10.135.79.1', 48354)
+(13668) accepted ('10.135.79.1', 48370)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:07] "POST /socket.io/?EIO=4&transport=polling&t=PWV7AGJ&sid=mWtoaPSyyHZMIthwAAAE HTTP/1.1" 200 195 0.000962
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:07] "GET /socket.io/?EIO=4&transport=polling&t=PWV7AGL&sid=mWtoaPSyyHZMIthwAAAE HTTP/1.1" 200 241 0.001700
+(13668) accepted ('10.135.79.1', 40674)
+(13668) accepted ('10.135.79.1', 40678)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:07] "GET /socket.io/?EIO=4&transport=polling&t=PWV7AIb&sid=mWtoaPSyyHZMIthwAAAE HTTP/1.1" 200 209 0.255908
+(13668) accepted ('10.135.79.1', 40680)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:08] "GET /socket.io/?EIO=4&transport=polling&t=PWV7ATl HTTP/1.1" 200 338 0.000309
+(13668) accepted ('10.135.79.1', 40688)
+(13668) accepted ('10.135.79.1', 40694)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:08] "POST /socket.io/?EIO=4&transport=polling&t=PWV7AZ_&sid=Sh2PV6kFpzXBeExJAAAG HTTP/1.1" 200 205 0.000890
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:08] "GET /socket.io/?EIO=4&transport=polling&t=PWV7Aa0&sid=Sh2PV6kFpzXBeExJAAAG HTTP/1.1" 200 251 0.000123
+(13668) accepted ('10.135.79.1', 40708)
+(13668) accepted ('10.135.79.1', 40710)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:09] "GET /socket.io/?EIO=4&transport=polling&t=PWV7AcF&sid=Sh2PV6kFpzXBeExJAAAG HTTP/1.1" 200 219 0.244387
+(13668) accepted ('10.135.79.1', 40718)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:09] "GET /socket.io/?EIO=4&transport=polling&t=PWV7AjW HTTP/1.1" 200 338 0.000288
+(13668) accepted ('10.135.79.1', 40730)
+(13668) accepted ('10.135.79.1', 40736)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:09] "POST /socket.io/?EIO=4&transport=polling&t=PWV7Ali&sid=Yhgj-5YrOUY39l4NAAAI HTTP/1.1" 200 205 0.000860
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:09] "GET /socket.io/?EIO=4&transport=polling&t=PWV7Alj&sid=Yhgj-5YrOUY39l4NAAAI HTTP/1.1" 200 251 0.000122
+(13668) accepted ('10.135.79.1', 40738)
+(13668) accepted ('10.135.79.1', 40750)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:09] "GET /socket.io/?EIO=4&transport=polling&t=PWV7Anz&sid=Yhgj-5YrOUY39l4NAAAI HTTP/1.1" 200 219 0.256148
+(13668) accepted ('10.135.79.1', 40762)
+54.234.178.165,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:10] "HEAD / HTTP/1.1" 200 317 0.003929
+(13668) accepted ('10.135.79.1', 40766)
+54.234.178.165,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:10] "GET / HTTP/1.1" 200 26712 0.000795
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:39] "GET /socket.io/?EIO=4&transport=websocket&sid=5mqPG4ASj5kTvwBLAAAC HTTP/1.1" 200 0 34.271376
+(13668) accepted ('10.135.79.1', 40312)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:39] "GET /socket.io/?EIO=4&transport=polling&t=PWV7I2E HTTP/1.1" 200 341 0.000394
+(13668) accepted ('10.135.79.1', 40314)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:39] "GET /api/earnings HTTP/1.1" 200 614 0.081265
+(13668) accepted ('10.135.79.1', 40326)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:39] "POST /socket.io/?EIO=4&transport=polling&t=PWV7I8k&sid=UnmCCLsBB_S2BuK6AAAK HTTP/1.1" 200 208 0.000787
+(13668) accepted ('10.135.79.1', 40334)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:39] "GET /socket.io/?EIO=4&transport=polling&t=PWV7I8k.0&sid=UnmCCLsBB_S2BuK6AAAK HTTP/1.1" 200 254 0.000130
+(13668) accepted ('10.135.79.1', 40346)
+(13668) accepted ('10.135.79.1', 40348)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:40] "GET /socket.io/?EIO=4&transport=polling&t=PWV7IAy&sid=UnmCCLsBB_S2BuK6AAAK HTTP/1.1" 200 222 0.360768
+(13668) accepted ('10.135.79.1', 40352)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:40] "GET /socket.io/?EIO=4&transport=polling&t=PWV7H-Y HTTP/1.1" 200 276 0.000310
+(13668) accepted ('10.135.79.1', 40356)
+(13668) accepted ('10.135.79.1', 40368)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:40] "POST /socket.io/?EIO=4&transport=polling&t=PWV7I9k&sid=ItvhAZ-mUABzwd2XAAAM HTTP/1.1" 200 234 0.000711
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:40] "GET /socket.io/?EIO=4&transport=polling&t=PWV7IA0&sid=ItvhAZ-mUABzwd2XAAAM HTTP/1.1" 200 189 0.001220
+(13668) accepted ('10.135.79.1', 40374)
+(13668) accepted ('10.135.79.1', 40382)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:41] "GET /socket.io/?EIO=4&transport=polling&t=PWV7ICt&sid=ItvhAZ-mUABzwd2XAAAM HTTP/1.1" 200 157 0.347917
+(13668) accepted ('10.135.79.1', 40392)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:41] "GET /socket.io/?EIO=4&transport=polling&t=PWV7IOd HTTP/1.1" 200 338 0.000252
+(13668) accepted ('10.135.79.1', 40402)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:42] "GET /api/earnings HTTP/1.1" 200 611 0.080396
+(13668) accepted ('10.135.79.1', 40404)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:42] "POST /socket.io/?EIO=4&transport=polling&t=PWV7IWg&sid=t1s-02gSscKtanC-AAAO HTTP/1.1" 200 205 0.000922
+(13668) accepted ('10.135.79.1', 40418)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:42] "GET /socket.io/?EIO=4&transport=polling&t=PWV7IWj&sid=t1s-02gSscKtanC-AAAO HTTP/1.1" 200 251 0.000131
+(13668) accepted ('10.135.79.1', 40420)
+(13668) accepted ('10.135.79.1', 40422)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:42] "GET /socket.io/?EIO=4&transport=polling&t=PWV7IZG&sid=t1s-02gSscKtanC-AAAO HTTP/1.1" 200 219 0.279852
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:57:50] "GET /socket.io/?EIO=4&transport=websocket&sid=UnmCCLsBB_S2BuK6AAAK HTTP/1.1" 200 0 10.444756
+(13668) accepted ('10.135.79.1', 45046)
+(13668) accepted ('10.135.79.1', 45056)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:56] "GET /api/earnings HTTP/1.1" 200 611 0.080872
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:56] "GET /socket.io/?EIO=4&transport=polling&t=PWV7M97 HTTP/1.1" 200 338 0.000228
+(13668) accepted ('10.135.79.1', 45070)
+(13668) accepted ('10.135.79.1', 45082)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:56] "POST /socket.io/?EIO=4&transport=polling&t=PWV7MGi&sid=qTE--S_Ok86JL75jAAAQ HTTP/1.1" 200 205 0.000757
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:56] "GET /socket.io/?EIO=4&transport=polling&t=PWV7MGk&sid=qTE--S_Ok86JL75jAAAQ HTTP/1.1" 200 251 0.001364
+(13668) accepted ('10.135.79.1', 45092)
+(13668) accepted ('10.135.79.1', 45096)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:57:57] "GET /socket.io/?EIO=4&transport=polling&t=PWV7MIz&sid=qTE--S_Ok86JL75jAAAQ HTTP/1.1" 200 219 0.275407
+(13668) accepted ('10.135.79.1', 41314)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:58:06] "OPTIONS /api/earnings/6 HTTP/1.1" 200 307 0.000937
+(13668) accepted ('10.135.79.1', 41322)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:58:07] "DELETE /api/earnings/6 HTTP/1.1" 204 180 0.631759
+(13668) accepted ('10.135.79.1', 41330)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:58:07] "GET /api/earnings HTTP/1.1" 200 396 0.081032
+(13668) accepted ('10.135.79.1', 37980)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:58:12] "OPTIONS /api/earnings/7 HTTP/1.1" 200 307 0.000731
+(13668) accepted ('10.135.79.1', 37982)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:58:12] "DELETE /api/earnings/7 HTTP/1.1" 204 180 0.108427
+(13668) accepted ('10.135.79.1', 37984)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:58:13] "GET /api/earnings HTTP/1.1" 200 186 0.081246
+(13668) accepted ('10.135.79.1', 37112)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:58:55] "OPTIONS /api/earnings HTTP/1.1" 200 344 0.000803
+(13668) accepted ('10.135.79.1', 37118)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:58:55] "POST /api/earnings HTTP/1.1" 201 396 0.168265
+(13668) accepted ('10.135.79.1', 37126)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:58:56] "GET /api/earnings HTTP/1.1" 200 411 0.080600
+(13668) accepted ('10.135.79.1', 37516)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:59:04] "OPTIONS /api/earnings HTTP/1.1" 200 344 0.000701
+(13668) accepted ('10.135.79.1', 37532)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:59:04] "POST /api/earnings HTTP/1.1" 201 376 0.162082
+(13668) accepted ('10.135.79.1', 37540)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:59:05] "GET /api/earnings HTTP/1.1" 200 614 0.080846
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:59:10] "GET /socket.io/?EIO=4&transport=websocket&sid=ItvhAZ-mUABzwd2XAAAM HTTP/1.1" 200 0 89.925407
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:10] "GET /socket.io/?EIO=4&transport=websocket&sid=t1s-02gSscKtanC-AAAO HTTP/1.1" 200 0 88.525113
+(13668) accepted ('10.135.79.1', 55824)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:12] "GET /socket.io/?EIO=4&transport=polling&t=PWV7eW7 HTTP/1.1" 200 338 0.000245
+(13668) accepted ('10.135.79.1', 55836)
+(13668) accepted ('10.135.79.1', 55842)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:12] "POST /socket.io/?EIO=4&transport=polling&t=PWV7eeH&sid=Ms0bTUZSV1Ic50ziAAAS HTTP/1.1" 200 205 0.003102
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:12] "GET /socket.io/?EIO=4&transport=polling&t=PWV7eeJ&sid=Ms0bTUZSV1Ic50ziAAAS HTTP/1.1" 200 251 0.003831
+(13668) accepted ('10.135.79.1', 55846)
+(13668) accepted ('10.135.79.1', 55852)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:12] "GET /socket.io/?EIO=4&transport=polling&t=PWV7ecD HTTP/1.1" 200 276 0.000223
+(13668) accepted ('10.135.79.1', 55858)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:13] "POST /socket.io/?EIO=4&transport=polling&t=PWV7ekA&sid=LP9LaroHekuISISsAAAU HTTP/1.1" 200 234 0.000704
+(13668) accepted ('10.135.79.1', 55874)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:13] "GET /socket.io/?EIO=4&transport=polling&t=PWV7ekC&sid=LP9LaroHekuISISsAAAU HTTP/1.1" 200 189 0.000117
+(13668) accepted ('10.135.79.1', 55886)
+(13668) accepted ('10.135.79.1', 55900)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:13] "GET /socket.io/?EIO=4&transport=polling&t=PWV7eg-&sid=Ms0bTUZSV1Ic50ziAAAS HTTP/1.1" 200 219 0.728232
+(13668) accepted ('10.135.79.1', 55904)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:14] "GET /socket.io/?EIO=4&transport=polling&t=PWV7emn&sid=LP9LaroHekuISISsAAAU HTTP/1.1" 200 157 0.847036
+(13668) accepted ('10.135.79.1', 55918)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:14] "GET /socket.io/?EIO=4&transport=polling&t=PWV7f0T&sid=LP9LaroHekuISISsAAAU HTTP/1.1" 200 157 0.000146
+(13668) accepted ('10.135.79.1', 47456)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:21] "OPTIONS /api/earnings/8 HTTP/1.1" 200 307 0.000745
+(13668) accepted ('10.135.79.1', 47466)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:22] "DELETE /api/earnings/8 HTTP/1.1" 204 180 0.109154
+(13668) accepted ('10.135.79.1', 47480)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:22] "GET /api/earnings HTTP/1.1" 200 391 0.080733
+(13668) accepted ('10.135.79.1', 47496)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:59:26] "OPTIONS /api/earnings/8 HTTP/1.1" 200 307 0.000699
+(13668) accepted ('10.135.79.1', 47498)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:59:26] "DELETE /api/earnings/8 HTTP/1.1" 400 347 0.082036
+(13668) accepted ('10.135.79.1', 33556)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 15:59:28] "GET /api/earnings HTTP/1.1" 200 391 0.080968
+(13668) accepted ('10.135.79.1', 42140)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:45] "OPTIONS /api/earnings HTTP/1.1" 200 344 0.000701
+(13668) accepted ('10.135.79.1', 42152)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:45] "POST /api/earnings HTTP/1.1" 201 415 0.161702
+(13668) accepted ('10.135.79.1', 42168)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 15:59:46] "GET /api/earnings HTTP/1.1" 200 633 0.081297
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:00:11] "GET /socket.io/?EIO=4&transport=websocket&sid=Ms0bTUZSV1Ic50ziAAAS HTTP/1.1" 200 0 58.056240
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:00:11] "GET /socket.io/?EIO=4&transport=websocket&sid=LP9LaroHekuISISsAAAU HTTP/1.1" 200 0 57.564740
+(13668) accepted ('10.135.79.1', 57938)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:00:26] "GET /socket.io/?EIO=4&transport=polling&t=PWV7wSY HTTP/1.1" 200 338 0.000251
+(13668) accepted ('10.135.79.1', 57944)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:00:26] "POST /socket.io/?EIO=4&transport=polling&t=PWV7wbq&sid=03yUReFlvuWI2zKaAAAW HTTP/1.1" 200 205 0.000691
+(13668) accepted ('10.135.79.1', 57950)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:00:26] "GET /socket.io/?EIO=4&transport=polling&t=PWV7wbt&sid=03yUReFlvuWI2zKaAAAW HTTP/1.1" 200 251 0.000160
+(13668) accepted ('10.135.79.1', 57954)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:00:26] "GET /socket.io/?EIO=4&transport=polling&t=PWV7wgU HTTP/1.1" 200 276 0.000237
+(13668) accepted ('10.135.79.1', 57958)
+(13668) accepted ('10.135.79.1', 57972)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:00:27] "POST /socket.io/?EIO=4&transport=polling&t=PWV7wos&sid=HxXA9nT_hgW66dzYAAAY HTTP/1.1" 200 234 0.000675
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:00:27] "GET /socket.io/?EIO=4&transport=polling&t=PWV7wox&sid=HxXA9nT_hgW66dzYAAAY HTTP/1.1" 200 189 0.001125
+(13668) accepted ('10.135.79.1', 57980)
+(13668) accepted ('10.135.79.1', 57990)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:00:27] "GET /socket.io/?EIO=4&transport=polling&t=PWV7wrf&sid=HxXA9nT_hgW66dzYAAAY HTTP/1.1" 200 157 0.294052
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:00:28] "GET /socket.io/?EIO=4&transport=websocket&sid=Yhgj-5YrOUY39l4NAAAI HTTP/1.1" 200 0 198.552788
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:00:31] "GET /socket.io/?EIO=4&transport=websocket&sid=HxXA9nT_hgW66dzYAAAY HTTP/1.1" 200 0 4.447392
+(13668) accepted ('10.135.79.1', 40040)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:00:32] "GET /api/earnings HTTP/1.1" 200 633 0.081398
+(13668) accepted ('10.135.79.1', 34596)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:00:43] "GET /api/earnings HTTP/1.1" 200 633 0.081128
+(13668) accepted ('10.135.79.1', 60958)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:04] "GET /socket.io/?EIO=4&transport=polling&t=PWV81_F HTTP/1.1" 200 276 0.000247
+(13668) accepted ('10.135.79.1', 60966)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:04] "GET /socket.io/?EIO=4&transport=polling&t=PWV7y8E HTTP/1.1" 200 276 0.000213
+(13668) accepted ('10.135.79.1', 58972)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:01:14] "GET /socket.io/?EIO=4&transport=polling&t=PWV86Ei HTTP/1.1" 200 276 0.000230
+(13668) accepted ('10.135.79.1', 58986)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:01:14] "POST /socket.io/?EIO=4&transport=polling&t=PWV86Ml&sid=br01wpnLhe4cNaOpAAAc HTTP/1.1" 200 234 0.001085
+(13668) accepted ('10.135.79.1', 58990)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:01:14] "GET /socket.io/?EIO=4&transport=polling&t=PWV86N1&sid=br01wpnLhe4cNaOpAAAc HTTP/1.1" 200 189 0.001014
+(13668) accepted ('10.135.79.1', 59000)
+(13668) accepted ('10.135.79.1', 59010)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:01:15] "GET /socket.io/?EIO=4&transport=polling&t=PWV86Q9&sid=br01wpnLhe4cNaOpAAAc HTTP/1.1" 200 157 0.301072
+(13668) accepted ('10.135.79.1', 59014)
+(13668) accepted ('10.135.79.1', 59018)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:15] "GET /socket.io/?EIO=4&transport=polling&t=PWV86ep HTTP/1.1" 200 338 0.000246
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:16] "GET /api/earnings HTTP/1.1" 200 633 0.079901
+(13668) accepted ('10.135.79.1', 59020)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:16] "POST /socket.io/?EIO=4&transport=polling&t=PWV86mE&sid=CZ-wpQm7XOEe9u9OAAAe HTTP/1.1" 200 205 0.000969
+(13668) accepted ('10.135.79.1', 59026)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:16] "GET /socket.io/?EIO=4&transport=polling&t=PWV86mH&sid=CZ-wpQm7XOEe9u9OAAAe HTTP/1.1" 200 251 0.000162
+(13668) accepted ('10.135.79.1', 59028)
+(13668) accepted ('10.135.79.1', 59044)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:16] "GET /socket.io/?EIO=4&transport=polling&t=PWV86p8&sid=CZ-wpQm7XOEe9u9OAAAe HTTP/1.1" 200 219 0.284954
+(13668) accepted ('10.135.79.1', 43980)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:39] "GET /api/earnings HTTP/1.1" 200 633 0.081676
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:01:45] "GET /socket.io/?EIO=4&transport=websocket&sid=Sh2PV6kFpzXBeExJAAAG HTTP/1.1" 200 0 276.747056
+(13668) accepted ('10.135.79.1', 43986)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:46] "GET /socket.io/?EIO=4&transport=polling&t=PWV8EJY HTTP/1.1" 200 338 0.000238
+(13668) accepted ('10.135.79.1', 43988)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:46] "GET /api/earnings HTTP/1.1" 200 633 0.081181
+(13668) accepted ('10.135.79.1', 44002)
+(13668) accepted ('10.135.79.1', 44018)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:46] "POST /socket.io/?EIO=4&transport=polling&t=PWV8ENZ&sid=GfSCZ33vDl2Z5sShAAAg HTTP/1.1" 200 205 0.001050
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:46] "GET /socket.io/?EIO=4&transport=polling&t=PWV8ENa&sid=GfSCZ33vDl2Z5sShAAAg HTTP/1.1" 200 251 0.000528
+(13668) accepted ('10.135.79.1', 44026)
+(13668) accepted ('10.135.79.1', 44032)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:47] "GET /socket.io/?EIO=4&transport=polling&t=PWV8EPx&sid=GfSCZ33vDl2Z5sShAAAg HTTP/1.1" 200 219 0.273952
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:01:49] "GET /socket.io/?EIO=4&transport=websocket&sid=CZ-wpQm7XOEe9u9OAAAe HTTP/1.1" 200 0 33.343181
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:01:49] "GET /socket.io/?EIO=4&transport=websocket&sid=br01wpnLhe4cNaOpAAAc HTTP/1.1" 200 0 34.914743
+(13668) accepted ('10.135.79.1', 38384)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:21] "GET /socket.io/?EIO=4&transport=polling&t=PWV8MXd HTTP/1.1" 200 338 0.000242
+(13668) accepted ('10.135.79.1', 38390)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:21] "POST /socket.io/?EIO=4&transport=polling&t=PWV8MfM&sid=ls8IK8Ieoz-ZMeT8AAAi HTTP/1.1" 200 205 0.000726
+(13668) accepted ('10.135.79.1', 38396)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:21] "GET /socket.io/?EIO=4&transport=polling&t=PWV8MfQ&sid=ls8IK8Ieoz-ZMeT8AAAi HTTP/1.1" 200 251 0.000165
+(13668) accepted ('10.135.79.1', 38406)
+(13668) accepted ('10.135.79.1', 38420)
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:21] "GET /socket.io/?EIO=4&transport=polling&t=PWV8Mh-&sid=ls8IK8Ieoz-ZMeT8AAAi HTTP/1.1" 200 219 0.330855
+(13668) accepted ('10.135.79.1', 38424)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:02:22] "GET /socket.io/?EIO=4&transport=polling&t=PWV8MlM HTTP/1.1" 200 276 0.000288
+(13668) accepted ('10.135.79.1', 38428)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:02:22] "POST /socket.io/?EIO=4&transport=polling&t=PWV8MuN&sid=kM4--HS9tAhy6zeXAAAk HTTP/1.1" 200 234 0.000707
+(13668) accepted ('10.135.79.1', 38436)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:02:22] "GET /socket.io/?EIO=4&transport=polling&t=PWV8MuT&sid=kM4--HS9tAhy6zeXAAAk HTTP/1.1" 200 189 0.000126
+(13668) accepted ('10.135.79.1', 38444)
+(13668) accepted ('10.135.79.1', 38460)
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:02:22] "GET /socket.io/?EIO=4&transport=polling&t=PWV8Mx2&sid=kM4--HS9tAhy6zeXAAAk HTTP/1.1" 200 157 0.292765
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:02:28] "GET /socket.io/?EIO=4&transport=websocket&sid=mWtoaPSyyHZMIthwAAAE HTTP/1.1" 200 0 321.104685
+(13668) accepted ('10.135.79.1', 41654)
+(13668) accepted ('10.135.79.1', 41666)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:29] "GET /socket.io/?EIO=4&transport=polling&t=PWV8Oto HTTP/1.1" 200 328 0.000246
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:29] "GET /api/earnings HTTP/1.1" 200 623 0.080101
+(13668) accepted ('10.135.79.1', 41678)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:30] "POST /socket.io/?EIO=4&transport=polling&t=PWV8P2e&sid=rF3sR6JAgSNOp0FUAAAm HTTP/1.1" 200 195 0.001119
+(13668) accepted ('10.135.79.1', 41682)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:30] "GET /socket.io/?EIO=4&transport=polling&t=PWV8P2g&sid=rF3sR6JAgSNOp0FUAAAm HTTP/1.1" 200 241 0.000177
+(13668) accepted ('10.135.79.1', 41690)
+(13668) accepted ('10.135.79.1', 41694)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:30] "GET /socket.io/?EIO=4&transport=polling&t=PWV8P63&sid=rF3sR6JAgSNOp0FUAAAm HTTP/1.1" 200 209 0.175137
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:36] "GET /socket.io/?EIO=4&transport=websocket&sid=rF3sR6JAgSNOp0FUAAAm HTTP/1.1" 200 0 6.116045
+179.232.138.177,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:37] "GET /socket.io/?EIO=4&transport=websocket&sid=ls8IK8Ieoz-ZMeT8AAAi HTTP/1.1" 200 0 15.459457
+(13668) accepted ('10.135.79.1', 41698)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:37] "GET /socket.io/?EIO=4&transport=polling&t=PWV8QjU HTTP/1.1" 200 328 0.000254
+(13668) accepted ('10.135.79.1', 41708)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:37] "GET /api/earnings HTTP/1.1" 200 623 0.079944
+(13668) accepted ('10.135.79.1', 41718)
+(13668) accepted ('10.135.79.1', 41732)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:37] "POST /socket.io/?EIO=4&transport=polling&t=PWV8QpS&sid=CqyVOLQmT_88I3DAAAAo HTTP/1.1" 200 195 0.000669
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:37] "GET /socket.io/?EIO=4&transport=polling&t=PWV8QpT&sid=CqyVOLQmT_88I3DAAAAo HTTP/1.1" 200 241 0.001796
+(13668) accepted ('10.135.79.1', 47280)
+(13668) accepted ('10.135.79.1', 47288)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:37] "GET /socket.io/?EIO=4&transport=polling&t=PWV8QsE&sid=CqyVOLQmT_88I3DAAAAo HTTP/1.1" 200 209 0.221520
+179.232.138.177,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:02:42] "GET /socket.io/?EIO=4&transport=websocket&sid=kM4--HS9tAhy6zeXAAAk HTTP/1.1" 200 0 20.072455
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:48] "GET /socket.io/?EIO=4&transport=websocket&sid=CqyVOLQmT_88I3DAAAAo HTTP/1.1" 200 0 10.539519
+(13668) accepted ('10.135.79.1', 40890)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:48] "GET /api/earnings HTTP/1.1" 200 623 0.082277
+(13668) accepted ('10.135.79.1', 40904)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:48] "GET /socket.io/?EIO=4&transport=polling&t=PWV8TZA HTTP/1.1" 200 328 0.000234
+(13668) accepted ('10.135.79.1', 40914)
+(13668) accepted ('10.135.79.1', 40916)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:49] "POST /socket.io/?EIO=4&transport=polling&t=PWV8Tf_&sid=DI_w1EuQz5TiresEAAAq HTTP/1.1" 200 195 0.001156
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:49] "GET /socket.io/?EIO=4&transport=polling&t=PWV8Tg1&sid=DI_w1EuQz5TiresEAAAq HTTP/1.1" 200 241 0.001642
+(13668) accepted ('10.135.79.1', 40928)
+(13668) accepted ('10.135.79.1', 40930)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:49] "GET /socket.io/?EIO=4&transport=polling&t=PWV8Tjy&sid=DI_w1EuQz5TiresEAAAq HTTP/1.1" 200 209 0.187085
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:56] "GET /socket.io/?EIO=4&transport=websocket&sid=DI_w1EuQz5TiresEAAAq HTTP/1.1" 200 0 6.770362
+(13668) accepted ('10.135.79.1', 40942)
+(13668) accepted ('10.135.79.1', 40944)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:56] "GET /socket.io/?EIO=4&transport=polling&t=PWV8VVb HTTP/1.1" 200 328 0.000250
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:56] "GET /api/earnings HTTP/1.1" 200 623 0.080976
+(13668) accepted ('10.135.79.1', 40956)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:57] "POST /socket.io/?EIO=4&transport=polling&t=PWV8Vco&sid=HoirRhCqvsR_dhVnAAAs HTTP/1.1" 200 195 0.000759
+(13668) accepted ('10.135.79.1', 40962)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:57] "GET /socket.io/?EIO=4&transport=polling&t=PWV8Vcq&sid=HoirRhCqvsR_dhVnAAAs HTTP/1.1" 200 241 0.000132
+(13668) accepted ('10.135.79.1', 40966)
+(13668) accepted ('10.135.79.1', 40980)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:02:57] "GET /socket.io/?EIO=4&transport=polling&t=PWV8VfA&sid=HoirRhCqvsR_dhVnAAAs HTTP/1.1" 200 209 0.263207
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:02] "GET /socket.io/?EIO=4&transport=websocket&sid=HoirRhCqvsR_dhVnAAAs HTTP/1.1" 200 0 4.917129
+(13668) accepted ('10.135.79.1', 55252)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:02] "GET /api/earnings HTTP/1.1" 200 623 0.081639
+(13668) accepted ('10.135.79.1', 55264)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:02] "GET /socket.io/?EIO=4&transport=polling&t=PWV8W-r HTTP/1.1" 200 328 0.000221
+(13668) accepted ('10.135.79.1', 55280)
+(13668) accepted ('10.135.79.1', 55284)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:03] "POST /socket.io/?EIO=4&transport=polling&t=PWV8X6q&sid=6IByih8wvMNErNumAAAu HTTP/1.1" 200 195 0.000674
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:03] "GET /socket.io/?EIO=4&transport=polling&t=PWV8X6s&sid=6IByih8wvMNErNumAAAu HTTP/1.1" 200 241 0.001175
+(13668) accepted ('10.135.79.1', 55288)
+(13668) accepted ('10.135.79.1', 55300)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:03] "GET /socket.io/?EIO=4&transport=polling&t=PWV8X9N&sid=6IByih8wvMNErNumAAAu HTTP/1.1" 200 209 0.260700
+(13668) accepted ('10.135.79.1', 38036)
+(13668) accepted ('10.135.79.1', 38044)
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:34] "OPTIONS /api/earnings HTTP/1.1" 200 387 0.001153
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:34] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV8ekT HTTP/1.1" 200 342 0.000174
+(13668) accepted ('10.135.79.1', 38060)
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:34] "GET /api/earnings HTTP/1.1" 200 667 0.081418
+(13668) accepted ('10.135.79.1', 38064)
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:34] "GET /socket.io/?EIO=4&transport=polling&t=PWV8ekT HTTP/1.1" 200 372 0.000279
+(13668) accepted ('10.135.79.1', 38070)
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV8etM&sid=RhMMIGkBpQDySFBRAAAw HTTP/1.1" 200 342 0.000158
+(13668) accepted ('10.135.79.1', 38078)
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV8etO&sid=RhMMIGkBpQDySFBRAAAw HTTP/1.1" 200 342 0.000108
+(13668) accepted ('10.135.79.1', 38092)
+(13668) accepted ('10.135.79.1', 38100)
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "POST /socket.io/?EIO=4&transport=polling&t=PWV8etM&sid=RhMMIGkBpQDySFBRAAAw HTTP/1.1" 200 239 0.000790
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "GET /socket.io/?EIO=4&transport=polling&t=PWV8etO&sid=RhMMIGkBpQDySFBRAAAw HTTP/1.1" 200 285 0.000130
+(13668) accepted ('10.135.79.1', 38108)
+(13668) accepted ('10.135.79.1', 38122)
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV8ev-&sid=RhMMIGkBpQDySFBRAAAw HTTP/1.1" 200 342 0.000146
+(13668) accepted ('10.135.79.1', 38124)
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "GET /socket.io/?EIO=4&transport=polling&t=PWV8ev-&sid=RhMMIGkBpQDySFBRAAAw HTTP/1.1" 200 253 0.000191
+(13668) accepted ('10.135.79.1', 38132)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:03:35] "GET /api/earnings HTTP/1.1" 200 633 0.081747
+(13668) accepted ('10.135.79.1', 38138)
+(13668) accepted ('10.135.79.1', 38148)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "OPTIONS /api/earnings HTTP/1.1" 200 387 0.000740
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV8exA HTTP/1.1" 200 342 0.000108
+(13668) accepted ('10.135.79.1', 38160)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "GET /api/earnings HTTP/1.1" 200 667 0.082304
+(13668) accepted ('10.135.79.1', 38176)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "GET /socket.io/?EIO=4&transport=polling&t=PWV8exA HTTP/1.1" 200 372 0.000215
+(13668) accepted ('10.135.79.1', 38184)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV8f3_&sid=rGhql1X69kvW7EuPAAAy HTTP/1.1" 200 342 0.000170
+(13668) accepted ('10.135.79.1', 38200)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV8f41&sid=rGhql1X69kvW7EuPAAAy HTTP/1.1" 200 342 0.000114
+(13668) accepted ('10.135.79.1', 38204)
+(13668) accepted ('10.135.79.1', 38218)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "POST /socket.io/?EIO=4&transport=polling&t=PWV8f3_&sid=rGhql1X69kvW7EuPAAAy HTTP/1.1" 200 239 0.000789
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:35] "GET /socket.io/?EIO=4&transport=polling&t=PWV8f41&sid=rGhql1X69kvW7EuPAAAy HTTP/1.1" 200 285 0.000128
+134.199.231.254,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:36] "GET /socket.io/?EIO=4&transport=websocket&sid=RhMMIGkBpQDySFBRAAAw HTTP/1.1" 200 0 0.824463
+(13668) accepted ('10.135.79.1', 38232)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:36] "GET /socket.io/?EIO=4&transport=websocket&sid=rGhql1X69kvW7EuPAAAy HTTP/1.1" 200 0 0.043145
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:03:41] "GET /socket.io/?EIO=4&transport=websocket&sid=GfSCZ33vDl2Z5sShAAAg HTTP/1.1" 200 0 114.484348
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:03:41] "GET /socket.io/?EIO=4&transport=websocket&sid=6IByih8wvMNErNumAAAu HTTP/1.1" 200 0 38.085124
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:03:44] "GET /socket.io/?EIO=4&transport=websocket&sid=qTE--S_Ok86JL75jAAAQ HTTP/1.1" 200 0 347.955094
+(13668) accepted ('10.135.79.1', 59476)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:03:45] "GET /socket.io/?EIO=4&transport=polling&t=PWV8hNL HTTP/1.1" 200 338 0.000263
+(13668) accepted ('10.135.79.1', 59486)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:03:45] "GET /api/earnings HTTP/1.1" 200 633 0.081174
+(13668) accepted ('10.135.79.1', 59490)
+(13668) accepted ('10.135.79.1', 59494)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:03:45] "POST /socket.io/?EIO=4&transport=polling&t=PWV8hQs&sid=ZYsNjc3H73TlFIdEAAA0 HTTP/1.1" 200 205 0.000738
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:03:45] "GET /socket.io/?EIO=4&transport=polling&t=PWV8hQt&sid=ZYsNjc3H73TlFIdEAAA0 HTTP/1.1" 200 251 0.000114
+(13668) accepted ('10.135.79.1', 59500)
+(13668) accepted ('10.135.79.1', 59514)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:03:45] "GET /socket.io/?EIO=4&transport=polling&t=PWV8hT4&sid=ZYsNjc3H73TlFIdEAAA0 HTTP/1.1" 200 219 0.260970
+(13668) accepted ('10.135.79.1', 37910)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:03:53] "GET /api/earnings HTTP/1.1" 200 633 0.083724
+(13668) accepted ('10.135.79.1', 55058)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:04:05] "OPTIONS /api/earnings HTTP/1.1" 200 344 0.000772
+(13668) accepted ('10.135.79.1', 55064)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:04:06] "POST /api/earnings HTTP/1.1" 201 360 0.163088
+(13668) accepted ('10.135.79.1', 55080)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:04:06] "GET /api/earnings HTTP/1.1" 200 820 0.081428
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:30] "GET /socket.io/?EIO=4&transport=websocket&sid=ZYsNjc3H73TlFIdEAAA0 HTTP/1.1" 200 0 164.694555
+(13668) accepted ('10.135.79.1', 58226)
+(13668) accepted ('10.135.79.1', 58234)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:30] "GET /socket.io/?EIO=4&transport=polling&t=PWV9JpQ HTTP/1.1" 200 338 0.000256
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:31] "GET /api/earnings HTTP/1.1" 200 820 0.082722
+(13668) accepted ('10.135.79.1', 58238)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:31] "POST /socket.io/?EIO=4&transport=polling&t=PWV9JtM&sid=2ysvR3x8PP-TQLEoAAA2 HTTP/1.1" 200 205 0.000859
+(13668) accepted ('10.135.79.1', 58240)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:31] "GET /socket.io/?EIO=4&transport=polling&t=PWV9JtN&sid=2ysvR3x8PP-TQLEoAAA2 HTTP/1.1" 200 251 0.000149
+(13668) accepted ('10.135.79.1', 58254)
+(13668) accepted ('10.135.79.1', 58264)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:32] "GET /socket.io/?EIO=4&transport=polling&t=PWV9Jvu&sid=2ysvR3x8PP-TQLEoAAA2 HTTP/1.1" 200 219 0.715143
+(13668) accepted ('10.135.79.1', 58270)
+(13668) accepted ('10.135.79.1', 58286)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "OPTIONS /api/earnings HTTP/1.1" 200 387 0.000711
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV9L3I HTTP/1.1" 200 342 0.000105
+(13668) accepted ('10.135.79.1', 58298)
+(13668) accepted ('10.135.79.1', 58310)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "GET /socket.io/?EIO=4&transport=polling&t=PWV9L3I HTTP/1.1" 200 372 0.000288
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "GET /api/earnings HTTP/1.1" 200 854 0.080742
+(13668) accepted ('10.135.79.1', 58312)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV9LAv&sid=PxgguPzNdsc8TDewAAA4 HTTP/1.1" 200 342 0.000130
+(13668) accepted ('10.135.79.1', 58324)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV9LAx&sid=PxgguPzNdsc8TDewAAA4 HTTP/1.1" 200 342 0.000108
+(13668) accepted ('10.135.79.1', 58338)
+(13668) accepted ('10.135.79.1', 58352)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "POST /socket.io/?EIO=4&transport=polling&t=PWV9LAv&sid=PxgguPzNdsc8TDewAAA4 HTTP/1.1" 200 239 0.000749
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "GET /socket.io/?EIO=4&transport=polling&t=PWV9LAx&sid=PxgguPzNdsc8TDewAAA4 HTTP/1.1" 200 285 0.000120
+(13668) accepted ('10.135.79.1', 58364)
+(13668) accepted ('10.135.79.1', 58380)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV9LDu&sid=PxgguPzNdsc8TDewAAA4 HTTP/1.1" 200 342 0.000134
+(13668) accepted ('10.135.79.1', 58390)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:36] "GET /socket.io/?EIO=4&transport=polling&t=PWV9LDu&sid=PxgguPzNdsc8TDewAAA4 HTTP/1.1" 200 253 0.000153
+(13668) accepted ('10.135.79.1', 58394)
+(13668) accepted ('10.135.79.1', 58406)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "OPTIONS /api/earnings HTTP/1.1" 200 387 0.000740
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV9LEZ HTTP/1.1" 200 342 0.000117
+(13668) accepted ('10.135.79.1', 58418)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "GET /api/earnings HTTP/1.1" 200 854 0.080579
+(13668) accepted ('10.135.79.1', 58420)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "GET /socket.io/?EIO=4&transport=polling&t=PWV9LEZ HTTP/1.1" 200 372 0.000213
+(13668) accepted ('10.135.79.1', 58426)
+(13668) accepted ('10.135.79.1', 58428)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV9LOp&sid=ICxzF_sbW1pmMewuAAA6 HTTP/1.1" 200 342 0.000144
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV9LOx&sid=ICxzF_sbW1pmMewuAAA6 HTTP/1.1" 200 342 0.000105
+(13668) accepted ('10.135.79.1', 58436)
+(13668) accepted ('10.135.79.1', 58442)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "POST /socket.io/?EIO=4&transport=polling&t=PWV9LOp&sid=ICxzF_sbW1pmMewuAAA6 HTTP/1.1" 200 239 0.000737
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "GET /socket.io/?EIO=4&transport=polling&t=PWV9LOx&sid=ICxzF_sbW1pmMewuAAA6 HTTP/1.1" 200 285 0.000120
+(13668) accepted ('10.135.79.1', 58452)
+(13668) accepted ('10.135.79.1', 58456)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWV9LRu&sid=ICxzF_sbW1pmMewuAAA6 HTTP/1.1" 200 342 0.000135
+(13668) accepted ('10.135.79.1', 60914)
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "GET /socket.io/?EIO=4&transport=polling&t=PWV9LRu&sid=ICxzF_sbW1pmMewuAAA6 HTTP/1.1" 200 253 0.000159
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:37] "GET /socket.io/?EIO=4&transport=websocket&sid=PxgguPzNdsc8TDewAAA4 HTTP/1.1" 200 0 1.125838
+146.190.130.69,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:06:38] "GET /socket.io/?EIO=4&transport=websocket&sid=ICxzF_sbW1pmMewuAAA6 HTTP/1.1" 200 0 0.662230
+(13668) accepted ('10.135.79.1', 60924)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:42] "OPTIONS /api/earnings HTTP/1.1" 200 344 0.000976
+(13668) accepted ('10.135.79.1', 60932)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:42] "POST /api/earnings HTTP/1.1" 201 359 0.163201
+(13668) accepted ('10.135.79.1', 60936)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:42] "GET /api/earnings HTTP/1.1" 200 1006 0.081887
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:06:48] "GET /socket.io/?EIO=4&transport=websocket&sid=2ysvR3x8PP-TQLEoAAA2 HTTP/1.1" 200 0 16.820056
+(13668) accepted ('10.135.79.1', 53532)
+(13668) accepted ('10.135.79.1', 53542)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:20] "GET /socket.io/?EIO=4&transport=polling&t=PWV9VvI HTTP/1.1" 200 341 0.000268
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:20] "GET /api/earnings HTTP/1.1" 200 1009 0.081370
+(13668) accepted ('10.135.79.1', 53552)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:20] "POST /socket.io/?EIO=4&transport=polling&t=PWV9W0M&sid=7WSBL-qo3_GxvDhKAAA8 HTTP/1.1" 200 208 0.000782
+(13668) accepted ('10.135.79.1', 53562)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:20] "GET /socket.io/?EIO=4&transport=polling&t=PWV9W0N&sid=7WSBL-qo3_GxvDhKAAA8 HTTP/1.1" 200 254 0.000125
+(13668) accepted ('10.135.79.1', 53568)
+(13668) accepted ('10.135.79.1', 53578)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:21] "GET /socket.io/?EIO=4&transport=polling&t=PWV9W2Y&sid=7WSBL-qo3_GxvDhKAAA8 HTTP/1.1" 200 222 0.273679
+(13668) accepted ('10.135.79.1', 53592)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:23] "OPTIONS /api/earnings/9 HTTP/1.1" 200 310 0.000704
+(13668) accepted ('10.135.79.1', 53594)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:24] "DELETE /api/earnings/9 HTTP/1.1" 204 183 0.108875
+(13668) accepted ('10.135.79.1', 53596)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:24] "GET /api/earnings HTTP/1.1" 200 806 0.080883
+(13668) accepted ('10.135.79.1', 32798)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:36] "OPTIONS /api/earnings/11 HTTP/1.1" 200 310 0.000823
+(13668) accepted ('10.135.79.1', 32800)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:36] "DELETE /api/earnings/11 HTTP/1.1" 204 183 0.107705
+(13668) accepted ('10.135.79.1', 32810)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:37] "GET /api/earnings HTTP/1.1" 200 619 0.081027
+(13668) accepted ('10.135.79.1', 58624)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:49] "OPTIONS /api/earnings HTTP/1.1" 200 347 0.000804
+(13668) accepted ('10.135.79.1', 58630)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:49] "POST /api/earnings HTTP/1.1" 201 364 0.162788
+(13668) accepted ('10.135.79.1', 58636)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:07:49] "GET /api/earnings HTTP/1.1" 200 807 0.080943
+(13668) accepted ('10.135.79.1', 34040)
+(13668) accepted ('10.135.79.1', 34050)
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:38] "OPTIONS /api/earnings HTTP/1.1" 200 387 0.000787
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:38] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWVA1dL HTTP/1.1" 200 342 0.000124
+(13668) accepted ('10.135.79.1', 34054)
+(13668) accepted ('10.135.79.1', 34068)
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:38] "GET /socket.io/?EIO=4&transport=polling&t=PWVA1dL HTTP/1.1" 200 372 0.000251
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:38] "GET /api/earnings HTTP/1.1" 200 838 0.081505
+(13668) accepted ('10.135.79.1', 34072)
+(13668) accepted ('10.135.79.1', 34080)
+(13668) accepted ('10.135.79.1', 34086)
+(13668) accepted ('10.135.79.1', 34088)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:38] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWVA1fk HTTP/1.1" 200 342 0.000130
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:38] "OPTIONS /api/earnings HTTP/1.1" 200 387 0.000620
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:38] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWVA1jo&sid=KhQ6WvDWoenKH7LEAAA- HTTP/1.1" 200 342 0.000096
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:38] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWVA1jp&sid=KhQ6WvDWoenKH7LEAAA- HTTP/1.1" 200 342 0.000091
+(13668) accepted ('10.135.79.1', 34104)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "GET /api/earnings HTTP/1.1" 200 838 0.080338
+(13668) accepted ('10.135.79.1', 34118)
+(13668) accepted ('10.135.79.1', 34132)
+(13668) accepted ('10.135.79.1', 34140)
+(13668) accepted ('10.135.79.1', 34146)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "GET /socket.io/?EIO=4&transport=polling&t=PWVA1fk HTTP/1.1" 200 372 0.000192
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "POST /socket.io/?EIO=4&transport=polling&t=PWVA1jo&sid=KhQ6WvDWoenKH7LEAAA- HTTP/1.1" 200 239 0.000660
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "GET /socket.io/?EIO=4&transport=polling&t=PWVA1jp&sid=KhQ6WvDWoenKH7LEAAA- HTTP/1.1" 200 285 0.002299
+(13668) accepted ('10.135.79.1', 34148)
+(13668) accepted ('10.135.79.1', 34152)
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWVA1ne&sid=KhQ6WvDWoenKH7LEAAA- HTTP/1.1" 200 342 0.000147
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWVA1ng&sid=n4PCzn_717K6HFv4AAA_ HTTP/1.1" 200 342 0.000095
+(13668) accepted ('10.135.79.1', 34158)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWVA1ni&sid=n4PCzn_717K6HFv4AAA_ HTTP/1.1" 200 342 0.000097
+(13668) accepted ('10.135.79.1', 34164)
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "GET /socket.io/?EIO=4&transport=polling&t=PWVA1ne&sid=KhQ6WvDWoenKH7LEAAA- HTTP/1.1" 200 253 0.000161
+(13668) accepted ('10.135.79.1', 34178)
+(13668) accepted ('10.135.79.1', 34186)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "POST /socket.io/?EIO=4&transport=polling&t=PWVA1ng&sid=n4PCzn_717K6HFv4AAA_ HTTP/1.1" 200 239 0.000677
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "GET /socket.io/?EIO=4&transport=polling&t=PWVA1ni&sid=n4PCzn_717K6HFv4AAA_ HTTP/1.1" 200 285 0.001249
+(13668) accepted ('10.135.79.1', 34200)
+(13668) accepted ('10.135.79.1', 34216)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "OPTIONS /socket.io/?EIO=4&transport=polling&t=PWVA1qE&sid=n4PCzn_717K6HFv4AAA_ HTTP/1.1" 200 342 0.000157
+(13668) accepted ('10.135.79.1', 34220)
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "GET /socket.io/?EIO=4&transport=polling&t=PWVA1qE&sid=n4PCzn_717K6HFv4AAA_ HTTP/1.1" 200 253 0.000180
+147.182.204.225,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:39] "GET /socket.io/?EIO=4&transport=websocket&sid=n4PCzn_717K6HFv4AAA_ HTTP/1.1" 200 0 0.446059
+164.92.73.15,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:40] "GET /socket.io/?EIO=4&transport=websocket&sid=KhQ6WvDWoenKH7LEAAA- HTTP/1.1" 200 0 0.970783
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:09:59] "GET /socket.io/?EIO=4&transport=websocket&sid=7WSBL-qo3_GxvDhKAAA8 HTTP/1.1" 200 0 158.744830
+(13668) accepted ('10.135.79.1', 35448)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:00] "GET /api/earnings HTTP/1.1" 200 807 0.080656
+(13668) accepted ('10.135.79.1', 35454)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:00] "GET /socket.io/?EIO=4&transport=polling&t=PWVA6w6 HTTP/1.1" 200 341 0.000216
+(13668) accepted ('10.135.79.1', 35458)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:00] "POST /socket.io/?EIO=4&transport=polling&t=PWVA6zv&sid=1XXhDEGSlYhRpcUmAABC HTTP/1.1" 200 208 0.000817
+(13668) accepted ('10.135.79.1', 35462)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:00] "GET /socket.io/?EIO=4&transport=polling&t=PWVA6zw&sid=1XXhDEGSlYhRpcUmAABC HTTP/1.1" 200 254 0.000145
+(13668) accepted ('10.135.79.1', 35478)
+(13668) accepted ('10.135.79.1', 35482)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:01] "GET /socket.io/?EIO=4&transport=polling&t=PWVA70l&sid=1XXhDEGSlYhRpcUmAABC HTTP/1.1" 200 222 0.867747
+(13668) accepted ('10.135.79.1', 35484)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:03] "OPTIONS /api/earnings/12 HTTP/1.1" 200 310 0.000683
+(13668) accepted ('10.135.79.1', 35486)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:03] "DELETE /api/earnings/12 HTTP/1.1" 204 183 0.106987
+(13668) accepted ('10.135.79.1', 35500)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:03] "GET /api/earnings HTTP/1.1" 200 621 0.080084
+(13668) accepted ('10.135.79.1', 35514)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:05] "OPTIONS /api/earnings/13 HTTP/1.1" 200 310 0.000739
+(13668) accepted ('10.135.79.1', 35528)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:05] "DELETE /api/earnings/13 HTTP/1.1" 204 183 0.108922
+(13668) accepted ('10.135.79.1', 35534)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:06] "GET /api/earnings HTTP/1.1" 200 433 0.080437
+(13668) accepted ('10.135.79.1', 49286)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:33] "OPTIONS /api/earnings HTTP/1.1" 200 347 0.000705
+(13668) accepted ('10.135.79.1', 49294)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:34] "POST /api/earnings HTTP/1.1" 201 380 0.161813
+(13668) accepted ('10.135.79.1', 49308)
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:34] "GET /api/earnings HTTP/1.1" 200 637 0.079793
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:10:43] "GET /socket.io/?EIO=4&transport=websocket&sid=1XXhDEGSlYhRpcUmAABC HTTP/1.1" 200 0 41.709976
+(13668) accepted ('10.135.79.1', 53880)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:10:55] "GET /socket.io/?EIO=4&transport=polling&t=PWVAKGs HTTP/1.1" 200 338 0.000269
+(13668) accepted ('10.135.79.1', 53894)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:10:55] "GET /api/earnings HTTP/1.1" 200 634 0.080477
+(13668) accepted ('10.135.79.1', 53906)
+(13668) accepted ('10.135.79.1', 53910)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:10:55] "POST /socket.io/?EIO=4&transport=polling&t=PWVAKKu&sid=IF6vD2nP-7FlzEH4AABE HTTP/1.1" 200 205 0.000654
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:10:55] "GET /socket.io/?EIO=4&transport=polling&t=PWVAKKv&sid=IF6vD2nP-7FlzEH4AABE HTTP/1.1" 200 251 0.001451
+(13668) accepted ('10.135.79.1', 53912)
+(13668) accepted ('10.135.79.1', 53916)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:10:55] "GET /socket.io/?EIO=4&transport=polling&t=PWVAKN8&sid=IF6vD2nP-7FlzEH4AABE HTTP/1.1" 200 219 0.322302
+(13668) accepted ('10.135.79.1', 38054)
+(13668) accepted ('10.135.79.1', 38066)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:10:59] "GET /socket.io/?EIO=4&transport=polling&t=PWVALUK HTTP/1.1" 200 338 0.000233
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:11:00] "GET /api/earnings HTTP/1.1" 200 634 0.081675
+(13668) accepted ('10.135.79.1', 38078)
+(13668) accepted ('10.135.79.1', 38084)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:11:00] "POST /socket.io/?EIO=4&transport=polling&t=PWVALYN&sid=WPca8SfggyhQpJmkAABG HTTP/1.1" 200 205 0.000748
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:11:00] "GET /socket.io/?EIO=4&transport=polling&t=PWVALYO&sid=WPca8SfggyhQpJmkAABG HTTP/1.1" 200 251 0.001415
+(13668) accepted ('10.135.79.1', 38088)
+(13668) accepted ('10.135.79.1', 38102)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:11:00] "GET /socket.io/?EIO=4&transport=polling&t=PWVALa_&sid=WPca8SfggyhQpJmkAABG HTTP/1.1" 200 219 0.292191
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:11:08] "GET /socket.io/?EIO=4&transport=websocket&sid=WPca8SfggyhQpJmkAABG HTTP/1.1" 200 0 7.857589
+(13668) accepted ('10.135.79.1', 33966)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:11:08] "GET /socket.io/?EIO=4&transport=polling&t=PWVANbG HTTP/1.1" 200 338 0.000269
+(13668) accepted ('10.135.79.1', 33972)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:11:08] "GET /api/earnings HTTP/1.1" 200 634 0.080832
+(13668) accepted ('10.135.79.1', 33982)
+(13668) accepted ('10.135.79.1', 33994)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:11:08] "POST /socket.io/?EIO=4&transport=polling&t=PWVANdn&sid=YFWO_wk8rSymaj2OAABI HTTP/1.1" 200 205 0.000720
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:11:08] "GET /socket.io/?EIO=4&transport=polling&t=PWVANdn.0&sid=YFWO_wk8rSymaj2OAABI HTTP/1.1" 200 251 0.001230
+(13668) accepted ('10.135.79.1', 34004)
+(13668) accepted ('10.135.79.1', 34012)
+177.52.25.198,172.16.0.121,10.135.79.1 - - [18/Jul/2025 16:11:09] "GET /socket.io/?EIO=4&transport=polling&t=PWVANgJ&sid=YFWO_wk8rSymaj2OAABI HTTP/1.1" 200 219 0.302363
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:11:14] "GET /socket.io/?EIO=4&transport=websocket&sid=YFWO_wk8rSymaj2OAABI HTTP/1.1" 200 0 5.766524
+177.52.25.198,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:11:16] "GET /socket.io/?EIO=4&transport=websocket&sid=IF6vD2nP-7FlzEH4AABE HTTP/1.1" 200 0 20.500051
+54.197.38.224,172.16.1.229,10.135.79.1 - - [18/Jul/2025 16:26:39] "GET /socket.io/?EIO=4&transport=websocket&sid=Mwo3HtOCGct1htL4AAAA HTTP/1.1" 200 0 1775.531841
+(13668) accepted ('10.215.217.1', 59250)
+54.197.38.224,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:26:40] "GET /socket.io/?EIO=4&transport=polling&t=PWVDx6u HTTP/1.1" 200 276 0.000267
+(13668) accepted ('10.215.217.1', 59266)
+(13668) accepted ('10.215.217.1', 59276)
+54.197.38.224,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:26:40] "POST /socket.io/?EIO=4&transport=polling&t=PWVDx8t&sid=k2ZJcwbDVEVRIVobAABK HTTP/1.1" 200 234 0.000782
+54.197.38.224,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:26:40] "GET /socket.io/?EIO=4&transport=polling&t=PWVDx8v&sid=k2ZJcwbDVEVRIVobAABK HTTP/1.1" 200 189 0.000119
+(13668) accepted ('10.215.217.1', 59282)
+(13668) accepted ('10.215.217.1', 59298)
+54.197.38.224,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:26:40] "GET /socket.io/?EIO=4&transport=polling&t=PWVDx94&sid=k2ZJcwbDVEVRIVobAABK HTTP/1.1" 200 157 0.000150
+(13668) accepted ('10.215.217.1', 59302)
+177.52.25.198,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:26:42] "GET /socket.io/?EIO=4&transport=polling&t=PWVDxaR HTTP/1.1" 200 338 0.000256
+(13668) accepted ('10.215.217.1', 59314)
+177.52.25.198,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:26:42] "POST /socket.io/?EIO=4&transport=polling&t=PWVDxcf&sid=zMJkCeIsJzPypBcJAABM HTTP/1.1" 200 205 0.000725
+(13668) accepted ('10.215.217.1', 59330)
+177.52.25.198,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:26:42] "GET /socket.io/?EIO=4&transport=polling&t=PWVDxch&sid=zMJkCeIsJzPypBcJAABM HTTP/1.1" 200 251 0.000137
+(13668) accepted ('10.215.217.1', 59336)
+(13668) accepted ('10.215.217.1', 59350)
+177.52.25.198,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:26:42] "GET /socket.io/?EIO=4&transport=polling&t=PWVDxew&sid=zMJkCeIsJzPypBcJAABM HTTP/1.1" 200 219 0.256285
+ * Restarting with stat
+(13668) accepted ('127.0.0.1', 57486)
+Traceback (most recent call last):
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/src/routes/earning.py", line 11, in get_earnings
+    earnings = Earning.query.order_by(Earning.data.desc()).all()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ubuntu/wedding-savings-backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT earnings.id AS earnings_id, earnings.valor AS earnings_valor, earnings.descricao AS earnings_descricao, earnings.data AS earnings_data, earnings.created_at AS earnings_created_at, earnings.updated_at AS earnings_updated_at 
+FROM earnings ORDER BY earnings.data DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+127.0.0.1 - - [18/Jul/2025 16:26:52] "GET /api/earnings HTTP/1.1" 500 48839 0.013726
+ * Debugger is active!
+ * Debugger PIN: 488-175-084
+(15343) wsgi starting up on http://0.0.0.0:5000
+(13668) accepted ('10.215.217.1', 53766)
+54.234.178.165,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:27:00] "HEAD / HTTP/1.1" 200 317 0.000923
+(13668) accepted ('10.215.217.1', 53774)
+54.234.178.165,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:27:00] "GET / HTTP/1.1" 200 26712 0.000836
+(15343) accepted ('10.215.217.1', 35896)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:28:19] "GET /socket.io/?EIO=4&transport=polling&t=PWVEIvc HTTP/1.1" 200 276 0.000384
+(15343) accepted ('10.215.217.1', 35898)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:28:19] "POST /socket.io/?EIO=4&transport=polling&t=PWVEJAg&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 200 234 0.001363
+(15343) accepted ('10.215.217.1', 35910)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:28:19] "GET /socket.io/?EIO=4&transport=polling&t=PWVEJAp&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 200 189 0.000158
+(15343) accepted ('10.215.217.1', 35922)
+(13668) accepted ('10.215.217.1', 35938)
+Invalid session UuiwIXOUuXzIlZUqAAAA (further occurrences of this error will be logged with level INFO)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:28:20] "GET /socket.io/?EIO=4&transport=websocket&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 400 280 0.000355
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:28:44] "GET /socket.io/?EIO=4&transport=polling&t=PWVEJDy&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 200 157 24.604636
+(15343) accepted ('10.215.217.1', 45336)
+(15343) accepted ('10.215.217.1', 45340)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:28:45] "POST /socket.io/?EIO=4&transport=polling&t=PWVEPHK&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 200 234 0.000195
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:10] "GET /socket.io/?EIO=4&transport=polling&t=PWVEPHQ&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 200 157 25.007588
+(15343) accepted ('10.215.217.1', 34380)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:10] "POST /socket.io/?EIO=4&transport=polling&t=PWVEVVj&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 200 234 0.000248
+(15343) accepted ('10.215.217.1', 34382)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:35] "GET /socket.io/?EIO=4&transport=polling&t=PWVEVVk&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 200 157 24.975400
+(13668) accepted ('10.215.217.1', 51234)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:35] "GET /socket.io/?EIO=4&transport=polling&t=PWVEVVk&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 400 189 0.000154
+(13668) accepted ('10.215.217.1', 51238)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:35] "POST /socket.io/?EIO=4&transport=polling&t=PWVEbj0&sid=UuiwIXOUuXzIlZUqAAAA HTTP/1.1" 400 280 0.000168
+(15343) accepted ('10.215.217.1', 51246)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:37] "GET /socket.io/?EIO=4&transport=polling&t=PWVEc9s HTTP/1.1" 200 276 0.000295
+(13668) accepted ('10.215.217.1', 47136)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:37] "POST /socket.io/?EIO=4&transport=polling&t=PWVEcCZ&sid=aK-gpGMIXlEAjtm-AAAC HTTP/1.1" 400 280 0.000181
+(13668) accepted ('10.215.217.1', 47142)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:37] "GET /socket.io/?EIO=4&transport=polling&t=PWVEcCe&sid=aK-gpGMIXlEAjtm-AAAC HTTP/1.1" 400 189 0.000138
+(15343) accepted ('10.215.217.1', 47146)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:38] "POST /socket.io/?EIO=4&transport=polling&t=PWVEcGt&sid=aK-gpGMIXlEAjtm-AAAC HTTP/1.1" 200 234 0.000237
+(15343) accepted ('10.215.217.1', 47156)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:39] "GET /socket.io/?EIO=4&transport=polling&t=PWVEcf6 HTTP/1.1" 200 276 0.000287
+(15343) accepted ('10.215.217.1', 47174)
+(13668) accepted ('10.215.217.1', 47164)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:39] "GET /socket.io/?EIO=4&transport=polling&t=PWVEchl&sid=98DLpsIYG5EGBpu9AAAD HTTP/1.1" 400 189 0.000169
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:39] "POST /socket.io/?EIO=4&transport=polling&t=PWVEchi&sid=98DLpsIYG5EGBpu9AAAD HTTP/1.1" 200 234 0.001029
+(15343) accepted ('10.215.217.1', 47178)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:40] "POST /socket.io/?EIO=4&transport=polling&t=PWVEckw&sid=98DLpsIYG5EGBpu9AAAD HTTP/1.1" 200 234 0.000813
+(13668) accepted ('10.215.217.1', 47194)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:42] "GET /socket.io/?EIO=4&transport=polling&t=PWVEd8M HTTP/1.1" 200 276 0.000267
+(13668) accepted ('10.215.217.1', 47204)
+(15343) accepted ('10.215.217.1', 47206)
+Invalid session PLF1S-IkhHS6KuY7AABO (further occurrences of this error will be logged with level INFO)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:42] "GET /socket.io/?EIO=4&transport=polling&t=PWVEdQt&sid=PLF1S-IkhHS6KuY7AABO HTTP/1.1" 400 189 0.000306
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:42] "POST /socket.io/?EIO=4&transport=polling&t=PWVEdQq&sid=PLF1S-IkhHS6KuY7AABO HTTP/1.1" 200 234 0.000762
+(15343) accepted ('10.215.217.1', 47222)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:43] "POST /socket.io/?EIO=4&transport=polling&t=PWVEdU5&sid=PLF1S-IkhHS6KuY7AABO HTTP/1.1" 400 280 0.000164
+(15343) accepted ('10.215.217.1', 47226)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:44] "GET /socket.io/?EIO=4&transport=polling&t=PWVEdtD HTTP/1.1" 200 276 0.000344
+(15343) accepted ('10.215.217.1', 47236)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:44] "POST /socket.io/?EIO=4&transport=polling&t=PWVEdw_&sid=2eO5im5Z5nBL5532AAAF HTTP/1.1" 200 234 0.000927
+(15343) accepted ('10.215.217.1', 47246)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:44] "GET /socket.io/?EIO=4&transport=polling&t=PWVEdx5&sid=2eO5im5Z5nBL5532AAAF HTTP/1.1" 200 189 0.000129
+(13668) accepted ('10.215.217.1', 47258)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:45] "GET /socket.io/?EIO=4&transport=polling&t=PWVEd-F&sid=2eO5im5Z5nBL5532AAAF HTTP/1.1" 400 189 0.000156
+(15343) accepted ('10.215.217.1', 47270)
+179.232.138.177,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:29:45] "GET /socket.io/?EIO=4&transport=websocket&sid=2eO5im5Z5nBL5532AAAF HTTP/1.1" 200 0 0.043170
+(15343) accepted ('10.215.217.1', 47280)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:45] "POST /socket.io/?EIO=4&transport=polling&t=PWVEe1K&sid=2eO5im5Z5nBL5532AAAF HTTP/1.1" 200 234 0.000696
+(15343) accepted ('10.215.217.1', 40078)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:47] "GET /socket.io/?EIO=4&transport=polling&t=PWVEec6 HTTP/1.1" 200 276 0.000247
+(13668) accepted ('10.215.217.1', 40082)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:47] "POST /socket.io/?EIO=4&transport=polling&t=PWVEeh9&sid=UcrcmpkMr7aE0wikAAAH HTTP/1.1" 400 280 0.000195
+(13668) accepted ('10.215.217.1', 40098)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:48] "GET /socket.io/?EIO=4&transport=polling&t=PWVEehE&sid=UcrcmpkMr7aE0wikAAAH HTTP/1.1" 400 189 0.000174
+(13668) accepted ('10.215.217.1', 40104)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:48] "POST /socket.io/?EIO=4&transport=polling&t=PWVEek-&sid=UcrcmpkMr7aE0wikAAAH HTTP/1.1" 400 280 0.000170
+(13668) accepted ('10.215.217.1', 40110)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:49] "GET /socket.io/?EIO=4&transport=polling&t=PWVEf5M HTTP/1.1" 200 276 0.000256
+(13668) accepted ('10.215.217.1', 40118)
+(13668) accepted ('10.215.217.1', 40132)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:49] "POST /socket.io/?EIO=4&transport=polling&t=PWVEf8e&sid=_rtItkf3XO2StSSuAABQ HTTP/1.1" 200 234 0.000806
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:49] "GET /socket.io/?EIO=4&transport=polling&t=PWVEf8j&sid=_rtItkf3XO2StSSuAABQ HTTP/1.1" 200 189 0.000121
+(15343) accepted ('10.215.217.1', 40138)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:50] "GET /socket.io/?EIO=4&transport=polling&t=PWVEfBg&sid=_rtItkf3XO2StSSuAABQ HTTP/1.1" 400 189 0.000140
+(15343) accepted ('10.215.217.1', 40150)
+179.232.138.177,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:29:50] "GET /socket.io/?EIO=4&transport=websocket&sid=_rtItkf3XO2StSSuAABQ HTTP/1.1" 400 280 0.000142
+(13668) accepted ('10.215.217.1', 40164)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:50] "POST /socket.io/?EIO=4&transport=polling&t=PWVEfEJ&sid=_rtItkf3XO2StSSuAABQ HTTP/1.1" 200 234 0.000698
+(13668) accepted ('10.215.217.1', 40172)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:51] "GET /socket.io/?EIO=4&transport=polling&t=PWVEfab HTTP/1.1" 200 276 0.000254
+(13668) accepted ('10.215.217.1', 40182)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:51] "POST /socket.io/?EIO=4&transport=polling&t=PWVEfdU&sid=0QlF0RvsIsyR1jd0AABS HTTP/1.1" 200 234 0.000720
+(13668) accepted ('10.215.217.1', 40184)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:51] "GET /socket.io/?EIO=4&transport=polling&t=PWVEfdY&sid=0QlF0RvsIsyR1jd0AABS HTTP/1.1" 200 189 0.000132
+(13668) accepted ('10.215.217.1', 40186)
+(13668) accepted ('10.215.217.1', 40194)
+179.232.138.177,172.16.1.229,10.215.217.1 - - [18/Jul/2025 16:29:52] "GET /socket.io/?EIO=4&transport=polling&t=PWVEfgD&sid=0QlF0RvsIsyR1jd0AABS HTTP/1.1" 200 157 0.335732
+179.232.138.177,172.16.0.121,10.215.217.1 - - [18/Jul/2025 16:33:57] "GET /socket.io/?EIO=4&transport=websocket&sid=0QlF0RvsIsyR1jd0AABS HTTP/1.1" 200 0 245.735037

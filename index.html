@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,27 +10,44 @@
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .progress-bar {
             transition: width 0.5s ease-in-out;
         }
+
         .fade-in {
             animation: fadeIn 0.5s ease-in;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .hover-scale {
             transition: transform 0.2s ease;
         }
+
         .hover-scale:hover {
             transform: scale(1.02);
         }
+
         .loading {
             opacity: 0.6;
             pointer-events: none;
         }
+
         .sync-indicator {
             position: fixed;
             top: 20px;
@@ -41,24 +59,29 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
+
         .sync-success {
             background-color: #10b981;
             color: white;
         }
+
         .sync-error {
             background-color: #ef4444;
             color: white;
         }
+
         .sync-loading {
             background-color: #3b82f6;
             color: white;
         }
+
         .sync-connected {
             background-color: #10b981;
             color: white;
         }
     </style>
 </head>
+
 <body class="bg-gray-50 min-h-screen">
     <!-- Indicador de Sincronização -->
     <div id="sync-indicator" class="sync-indicator sync-loading">
@@ -116,7 +139,8 @@
                 <span class="text-lg font-bold text-green-600" id="porcentagem">0%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
-                <div class="bg-gradient-to-r from-green-400 to-green-600 h-4 rounded-full progress-bar" id="barra-progresso" style="width: 0%"></div>
+                <div class="bg-gradient-to-r from-green-400 to-green-600 h-4 rounded-full progress-bar"
+                    id="barra-progresso" style="width: 0%"></div>
             </div>
             <div class="text-center">
                 <div id="mensagem-motivacional" class="text-gray-600 italic"></div>
@@ -151,25 +175,25 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Valor (R$)</label>
-                        <input type="number" id="valor-ganho" step="0.01" min="0" 
-                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                               placeholder="0,00" required>
+                        <input type="number" id="valor-ganho" step="0.01" min="0"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            placeholder="0,00" required>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Descrição</label>
-                        <input type="text" id="descricao-ganho" 
-                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                               placeholder="Ex: Freelance, venda, etc." required>
+                        <input type="text" id="descricao-ganho"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            placeholder="Ex: Freelance, venda, etc." required>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Data</label>
-                        <input type="date" id="data-ganho" 
-                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                               required>
+                        <input type="date" id="data-ganho"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            required>
                     </div>
                 </div>
-                <button type="submit" 
-                        class="w-full md:w-auto bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors duration-200 font-medium">
+                <button type="submit"
+                    class="w-full md:w-auto bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors duration-200 font-medium">
                     <i class="ri-add-line mr-2"></i>
                     Adicionar Ganho
                 </button>
@@ -184,13 +208,13 @@
                     Histórico de Ganhos
                 </h2>
                 <div class="flex space-x-2">
-                    <button id="btn-sincronizar" 
-                            class="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200">
+                    <button id="btn-sincronizar"
+                        class="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200">
                         <i class="ri-refresh-line mr-1"></i>
                         Sincronizar
                     </button>
-                    <button id="btn-zerar" 
-                            class="text-red-600 hover:text-red-800 text-sm font-medium transition-colors duration-200">
+                    <button id="btn-zerar"
+                        class="text-red-600 hover:text-red-800 text-sm font-medium transition-colors duration-200">
                         <i class="ri-delete-bin-line mr-1"></i>
                         Zerar Dados
                     </button>
@@ -216,12 +240,15 @@
     <div id="modal-confirmacao" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
         <div class="bg-white rounded-lg p-6 max-w-sm mx-4">
             <h3 class="text-lg font-semibold text-gray-900 mb-4">Confirmar Ação</h3>
-            <p class="text-gray-600 mb-6">Tem certeza que deseja zerar todos os dados? Esta ação não pode ser desfeita.</p>
+            <p class="text-gray-600 mb-6">Tem certeza que deseja zerar todos os dados? Esta ação não pode ser desfeita.
+            </p>
             <div class="flex space-x-3">
-                <button id="confirmar-zerar" class="flex-1 bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors">
+                <button id="confirmar-zerar"
+                    class="flex-1 bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors">
                     Sim, Zerar
                 </button>
-                <button id="cancelar-zerar" class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 transition-colors">
+                <button id="cancelar-zerar"
+                    class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 transition-colors">
                     Cancelar
                 </button>
             </div>
@@ -232,7 +259,7 @@
         // Configurações
         const META_TOTAL = 10000;
         const DATA_CASAMENTO = new Date('2026-02-28');
-        
+
         // Estado da aplicação
         let ganhos = [];
         let isLoading = false;
@@ -253,45 +280,45 @@
         const syncTextEl = document.getElementById('sync-text');
 
         // Inicialização
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Definir data atual como padrão
             document.getElementById('data-ganho').valueAsDate = new Date();
-            
+
             // Inicializar conexão WebSocket
             inicializarWebSocket();
-            
+
             // Carregar dados iniciais
             carregarDados();
-            
+
             // Atualizar contador
             atualizarContador();
-            
+
             // Atualizar contador a cada minuto
             setInterval(atualizarContador, 60000);
         });
 
         // Event Listeners
-        formGanho.addEventListener('submit', function(e) {
+        formGanho.addEventListener('submit', function (e) {
             e.preventDefault();
             adicionarGanho();
         });
 
-        document.getElementById('btn-sincronizar').addEventListener('click', function() {
+        document.getElementById('btn-sincronizar').addEventListener('click', function () {
             carregarDados();
         });
 
-        document.getElementById('btn-zerar').addEventListener('click', function() {
+        document.getElementById('btn-zerar').addEventListener('click', function () {
             document.getElementById('modal-confirmacao').classList.remove('hidden');
             document.getElementById('modal-confirmacao').classList.add('flex');
         });
 
-        document.getElementById('confirmar-zerar').addEventListener('click', function() {
+        document.getElementById('confirmar-zerar').addEventListener('click', function () {
             zerarDados();
             document.getElementById('modal-confirmacao').classList.add('hidden');
             document.getElementById('modal-confirmacao').classList.remove('flex');
         });
 
-        document.getElementById('cancelar-zerar').addEventListener('click', function() {
+        document.getElementById('cancelar-zerar').addEventListener('click', function () {
             document.getElementById('modal-confirmacao').classList.add('hidden');
             document.getElementById('modal-confirmacao').classList.remove('flex');
         });
@@ -300,41 +327,42 @@
         function inicializarWebSocket() {
             try {
                 socket = io('https://5000-i3jmkhvn69tub3z9gt5be-e954d26b.manusvm.computer');
-                
-                socket.on('connect', function() {
+
+                socket.on('connect', function () {
                     console.log('Conectado ao servidor');
+                    mostrarSyncStatus('connected', '🟢 Conectado - Dados sincronizados');
                 });
 
-                socket.on('disconnect', function() {
+                socket.on('disconnect', function () {
                     console.log('Desconectado do servidor');
                     mostrarSyncStatus('error', '🔴 Desconectado');
                 });
 
-                socket.on('earning_added', function(earning) {
+                socket.on('earning_added', function (earning) {
                     console.log('Novo ganho adicionado por outro usuário:', earning);
                     carregarDados();
                     mostrarNotificacao('Novo ganho adicionado por outro usuário!', 'info');
                 });
 
-                socket.on('earning_updated', function(earning) {
+                socket.on('earning_updated', function (earning) {
                     console.log('Ganho atualizado por outro usuário:', earning);
                     carregarDados();
                     mostrarNotificacao('Ganho atualizado por outro usuário!', 'info');
                 });
 
-                socket.on('earning_deleted', function(earning) {
+                socket.on('earning_deleted', function (earning) {
                     console.log('Ganho removido por outro usuário:', earning);
                     carregarDados();
                     mostrarNotificacao('Ganho removido por outro usuário!', 'info');
                 });
 
-                socket.on('earnings_cleared', function() {
+                socket.on('earnings_cleared', function () {
                     console.log('Dados zerados por outro usuário');
                     carregarDados();
                     mostrarNotificacao('Dados zerados por outro usuário!', 'info');
                 });
 
-                socket.on('sync_data', function(data) {
+                socket.on('sync_data', function (data) {
                     ganhos = data;
                     atualizarInterface();
                 });
@@ -349,20 +377,20 @@
         async function carregarDados() {
             mostrarSyncStatus('loading', 'Carregando...');
             isLoading = true;
-            
+
             try {
                 const response = await fetch('https://5000-i3jmkhvn69tub3z9gt5be-e954d26b.manusvm.computer/api/earnings');
-                
+
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
                 const data = await response.json();
                 ganhos = data;
-                
+
                 atualizarInterface();
-                
-                
+                mostrarSyncStatus('success', 'Dados carregados!');
+
             } catch (error) {
                 console.error('Erro ao carregar dados:', error);
                 mostrarSyncStatus('error', 'Erro ao carregar dados');
@@ -398,15 +426,15 @@
                 }
 
                 const earning = await response.json();
-                
+
                 // Atualizar dados locais
                 await carregarDados();
-                
+
                 formGanho.reset();
                 document.getElementById('data-ganho').valueAsDate = new Date();
 
                 mostrarNotificacao('Ganho adicionado com sucesso!', 'success');
-                
+
             } catch (error) {
                 console.error('Erro ao adicionar ganho:', error);
                 mostrarSyncStatus('error', 'Erro ao salvar');
@@ -428,9 +456,9 @@
 
                 // Atualizar dados locais
                 await carregarDados();
-                
+
                 mostrarNotificacao('Ganho removido!', 'info');
-                
+
             } catch (error) {
                 console.error('Erro ao remover ganho:', error);
                 mostrarSyncStatus('error', 'Erro ao remover');
@@ -452,9 +480,9 @@
 
                 // Atualizar dados locais
                 await carregarDados();
-                
+
                 mostrarNotificacao('Dados zerados!', 'info');
-                
+
             } catch (error) {
                 console.error('Erro ao zerar dados:', error);
                 mostrarSyncStatus('error', 'Erro ao zerar');
@@ -466,20 +494,17 @@
             syncIndicatorEl.className = `sync-indicator sync-${type}`;
             syncTextEl.textContent = message;
             syncIndicatorEl.style.display = 'block';
-            
-            if (type === 'success') {
+
+            if (type === 'success' || type === 'connected') {
                 setTimeout(() => {
-                    if (socket && socket.connected) {
-                        
-                    } else {
-                        syncIndicatorEl.style.display = 'none';
-                    }
-                }, 2000);
+                    syncIndicatorEl.style.display = 'none';
+                }, 3000);
             } else if (type === 'error') {
                 setTimeout(() => {
                     syncIndicatorEl.style.display = 'none';
                 }, 5000);
             }
+
         }
 
         // Funções principais
@@ -516,7 +541,7 @@
 
         function atualizarMensagemMotivacional(porcentagem) {
             let mensagem = '';
-            
+
             if (porcentagem === 0) {
                 mensagem = 'Vamos começar essa jornada! 💪';
             } else if (porcentagem < 25) {
@@ -569,12 +594,12 @@
         function atualizarContador() {
             const hoje = new Date();
             const diferenca = DATA_CASAMENTO - hoje;
-            
+
             if (diferenca > 0) {
                 const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
                 const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-                
+
                 countdownEl.textContent = `⏰ Faltam ${dias} dias, ${horas}h e ${minutos}min para o grande dia!`;
             } else {
                 countdownEl.textContent = '🎉 O grande dia chegou! Parabéns!';
@@ -599,14 +624,13 @@
         function mostrarNotificacao(mensagem, tipo) {
             // Criar elemento de notificação
             const notificacao = document.createElement('div');
-            notificacao.className = `fixed top-4 right-4 px-6 py-3 rounded-lg text-white z-50 fade-in ${
-                tipo === 'success' ? 'bg-green-500' : 
-                tipo === 'error' ? 'bg-red-500' : 'bg-blue-500'
-            }`;
+            notificacao.className = `fixed top-4 right-4 px-6 py-3 rounded-lg text-white z-50 fade-in ${tipo === 'success' ? 'bg-green-500' :
+                    tipo === 'error' ? 'bg-red-500' : 'bg-blue-500'
+                }`;
             notificacao.textContent = mensagem;
-            
+
             document.body.appendChild(notificacao);
-            
+
             // Remover após 3 segundos
             setTimeout(() => {
                 notificacao.remove();
@@ -617,5 +641,5 @@
         window.removerGanho = removerGanho;
     </script>
 </body>
-</html>
 
+</html>

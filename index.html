@@ -303,7 +303,7 @@
                 
                 socket.on('connect', function() {
                     console.log('Conectado ao servidor');
-                    mostrarSyncStatus('connected', '🟢 Conectado - Dados sincronizados');
+                    mostrarSyncStatus('connected', '');
                 });
 
                 socket.on('disconnect', function() {
@@ -471,7 +471,7 @@
             if (type === 'success') {
                 setTimeout(() => {
                     if (socket && socket.connected) {
-                        mostrarSyncStatus('connected', '🟢 Conectado - Dados sincronizados');
+                        mostrarSyncStatus('connected', '');
                     } else {
                         syncIndicatorEl.style.display = 'none';
                     }

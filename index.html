@@ -341,25 +341,21 @@
                 socket.on('earning_added', function (earning) {
                     console.log('Novo ganho adicionado por outro usuário:', earning);
                     carregarDados();
-                    mostrarNotificacao('Novo ganho adicionado por outro usuário!', 'info');
                 });
 
                 socket.on('earning_updated', function (earning) {
                     console.log('Ganho atualizado por outro usuário:', earning);
                     carregarDados();
-                    mostrarNotificacao('Ganho atualizado por outro usuário!', 'info');
                 });
 
                 socket.on('earning_deleted', function (earning) {
                     console.log('Ganho removido por outro usuário:', earning);
                     carregarDados();
-                    mostrarNotificacao('Ganho removido por outro usuário!', 'info');
                 });
 
                 socket.on('earnings_cleared', function () {
                     console.log('Dados zerados por outro usuário');
                     carregarDados();
-                    mostrarNotificacao('Dados zerados por outro usuário!', 'info');
                 });
 
                 socket.on('sync_data', function (data) {
@@ -436,7 +432,6 @@
             } catch (error) {
                 console.error('Erro ao adicionar ganho:', error);
                 mostrarSyncStatus('error', 'Erro ao salvar');
-                mostrarNotificacao('Erro ao adicionar ganho!', 'error');
             }
         }
 
@@ -455,12 +450,9 @@
                 // Atualizar dados locais
                 await carregarDados();
 
-                mostrarNotificacao('Ganho removido!', 'info');
-
             } catch (error) {
                 console.error('Erro ao remover ganho:', error);
                 mostrarSyncStatus('error', 'Erro ao remover');
-                mostrarNotificacao('Erro ao remover ganho!', 'error');
             }
         }
 
@@ -479,12 +471,11 @@
                 // Atualizar dados locais
                 await carregarDados();
 
-                mostrarNotificacao('Dados zerados!', 'info');
 
             } catch (error) {
                 console.error('Erro ao zerar dados:', error);
                 mostrarSyncStatus('error', 'Erro ao zerar');
-                mostrarNotificacao('Erro ao zerar dados!', 'error');
+    
             }
         }
 
@@ -619,21 +610,7 @@
             });
         }
 
-        function mostrarNotificacao(mensagem, tipo) {
-            // Criar elemento de notificação
-            const notificacao = document.createElement('div');
-            notificacao.className = `fixed top-4 right-4 px-6 py-3 rounded-lg text-white z-50 fade-in ${tipo === 'success' ? 'bg-green-500' :
-                    tipo === 'error' ? 'bg-red-500' : 'bg-blue-500'
-                }`;
-            notificacao.textContent = mensagem;
 
-            document.body.appendChild(notificacao);
-
-            // Remover após 3 segundos
-            setTimeout(() => {
-                notificacao.remove();
-            }, 3000);
-        }
 
         // Tornar funções globais para uso nos event handlers inline
         window.removerGanho = removerGanho;

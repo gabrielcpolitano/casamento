@@ -213,6 +213,11 @@
                         <i class="ri-refresh-line mr-1"></i>
                         Sincronizar
                     </button>
+                    <button id="btn-zerar"
+                        class="text-red-600 hover:text-red-800 text-sm font-medium transition-colors duration-200">
+                        <i class="ri-delete-bin-line mr-1"></i>
+                        Zerar Dados
+                    </button>
                 </div>
             </div>
             <div id="lista-ganhos" class="space-y-3">
@@ -300,6 +305,11 @@
 
         document.getElementById('btn-sincronizar').addEventListener('click', function () {
             carregarDados();
+        });
+
+        document.getElementById('btn-zerar').addEventListener('click', function () {
+            document.getElementById('modal-confirmacao').classList.remove('hidden');
+            document.getElementById('modal-confirmacao').classList.add('flex');
         });
 
         document.getElementById('confirmar-zerar').addEventListener('click', function () {
